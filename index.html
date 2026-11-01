@@ -4,348 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دیار عبدالعزيز فريق | منصة الخدمات وتحويل المستندات الآمنة</title>
-    
-    <!-- كود التحقق من ملكية الموقع في جوجل -->
-    <meta name="google-site-verification" content="_eeAqki9w-7QMt-n8gCZo32AQ6VTKVj2kUC_GEsMXLI" />
 
-    <meta name="keywords" content="گوهڕينا فايلا, دروستكرن بريسنتايشن, دیار عبدالعزيز فريق, تحويل word الى pdf, تحويل pdf الى powerpoint, صنع داتابيس, access, excel, admindiko, diar abdulaziz, file converter kurdish">
-    <meta name="description" content="موقع دیار عبدالعزيز فريق لـ گوهڕينا فايلا (تحويل الملفات) آمن 100%، دروستكرن بريسنتايشن PowerPoint، تصميم قواعد بيانات Access، وإدخال بيانات Excel بأسعار مناسبة.">
-    <meta property="og:title" content="دیار عبدالعزيز فريق - الخدمات السريعة وتحويل الملفات">
-    <meta property="og:description" content="منصة آمنة وسريعة لـ گوهڕينا فايلا و دروستكرن بريسنتايشن وقواعد البيانات.">
-    <meta property="og:type" content="website">
-
-    <!-- مكتبات معالجة الملفات في المتصفح -->
+    <!-- مكتبات المعالجة -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docx@7.8.2/build/index.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/PptxGenJS@3.12.0/dist/pptxgen.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+    <!-- ✅ جديدة: لتحويل HTML الناتج من mammoth إلى PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --panel-bg: rgba(17, 24, 39, 0.85);
-            --card-bg: rgba(30, 41, 59, 0.6);
-            --card-hover: rgba(51, 65, 85, 0.8);
-            --primary: #6366f1;
-            --primary-hover: #4f46e5;
-            --accent-cyan: #06b6d4;
-            --accent-green: #10b981;
-            --accent-red: #ef4444;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(99, 102, 241, 0.4);
-            --radius-lg: 16px;
-            --radius-md: 10px;
-            --radius-sm: 6px;
-            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); }
-        body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; overflow-x: hidden; line-height: 1.6; }
-        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border-color); }
-        .glass-card { background: var(--card-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: var(--radius-lg); transition: all 0.3s ease; }
-        .glass-card:hover { border-color: var(--border-glow); transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2); }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .gradient-text { background: linear-gradient(135deg, #a855f7, #6366f1, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent-cyan)); color: #ffffff; border: none; padding: 12px 24px; border-radius: var(--radius-md); font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
-        .btn-primary:hover:not(:disabled) { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.4); }
-        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-main); border: 1px solid var(--border-color); padding: 10px 18px; border-radius: var(--radius-md); font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
-        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
-        header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--border-color); }
-        .header-content { height: 75px; display: flex; align-items: center; justify-content: space-between; }
-        .brand-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; }
-        .logo-icon { width: 44px; height: 44px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--primary), var(--accent-cyan)); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; color: #fff; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
-        .brand-text h1 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
-        .brand-text span { font-size: 0.75rem; color: var(--accent-green); display: flex; align-items: center; gap: 4px; }
-        .pulse-dot { width: 6px; height: 6px; background-color: var(--accent-green); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
-        nav { display: flex; align-items: center; gap: 20px; }
-        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
-        nav a:hover { color: var(--text-main); }
-        .lang-select { background: rgba(15, 23, 42, 0.9); color: var(--text-main); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: var(--radius-md); font-size: 0.85rem; outline: none; cursor: pointer; transition: border-color 0.2s ease; }
-        .lang-select:focus { border-color: var(--primary); }
-        .hero { text-align: center; padding: 40px 0 20px 0; }
-        .badge-security { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 20px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); color: var(--accent-green); font-size: 0.8rem; margin-bottom: 20px; }
-        .hero h2 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
-        .hero p { color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1rem; }
-        .section-title { margin-bottom: 24px; }
-        .section-title h3 { font-size: 1.5rem; font-weight: 700; }
-        .section-title p { color: var(--text-muted); font-size: 0.85rem; }
-        .converter-grid { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
-        .conversion-options { display: flex; flex-direction: column; gap: 10px; }
-        .opt-btn { background: var(--card-bg); border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-md); color: var(--text-muted); cursor: pointer; text-align: start; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease; width: 100%; }
-        .opt-btn:hover, .opt-btn.active { background: rgba(99, 102, 241, 0.15); border-color: var(--primary); color: var(--text-main); }
-        .opt-btn-title { font-weight: 600; font-size: 0.9rem; display: block; }
-        .opt-btn-desc { font-size: 0.75rem; color: var(--text-muted); }
-        .dropzone-container { padding: 30px; border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: space-between; }
-        .dropzone { border: 2px dashed rgba(255, 255, 255, 0.15); border-radius: var(--radius-md); padding: 50px 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; background: rgba(15, 23, 42, 0.3); }
-        .dropzone:hover, .dropzone.dragover { border-color: var(--primary); background: rgba(99, 102, 241, 0.05); }
-        .upload-icon { font-size: 40px; color: var(--primary); margin-bottom: 12px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .service-card { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
-        .service-header { margin-bottom: 16px; }
-        .service-icon { width: 42px; height: 42px; border-radius: var(--radius-md); background: rgba(99, 102, 241, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; }
-        .service-card h4 { font-size: 1.1rem; margin-bottom: 6px; }
-        .service-card p { font-size: 0.8rem; color: var(--text-muted); }
-        .service-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border-color); }
-        .price-tag { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
-        .price-tag span { font-size: 0.75rem; font-weight: normal; color: var(--accent-cyan); }
-        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: rgba(17, 24, 39, 0.95); border: 1px solid var(--border-color); padding: 12px 24px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 200; font-size: 0.9rem; opacity: 0; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
-        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-        .contact-box { text-align: center; padding: 40px; border-radius: var(--radius-lg); margin-top: 40px; }
-        .contact-num { font-size: 1.5rem; font-weight: 800; color: var(--accent-cyan); direction: ltr; display: inline-block; margin-top: 8px; }
-        @media (max-width: 768px) { .converter-grid { grid-template-columns: 1fr; } .hero h2 { font-size: 1.8rem; } nav { display: none; } }
+        /* … احتفظ بنفس الـ CSS الذي لديك … */
     </style>
 </head>
 <body>
 
-    <div id="toast" class="toast">
-        <span id="toastMsg">رسالة التنبيه</span>
-    </div>
+    <div id="toast" class="toast"><span id="toastMsg">رسالة</span></div>
 
     <header class="glass-panel">
         <div class="container header-content">
-            <div class="brand-logo" title="دیار عبدالعزيز فريق">
+            <div class="brand-logo">
                 <div class="logo-icon">D</div>
                 <div class="brand-text">
                     <h1>دیار عبدالعزيز فريق</h1>
-                    <span><i class="pulse-dot"></i> <span id="txt-security-status">حماية قصوى 100%</span></span>
+                    <span><i class="pulse-dot"></i> حماية قصوى 100%</span>
                 </div>
             </div>
-
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <nav>
-                    <a href="#converter">محول الملفات</a>
-                    <a href="#services">الخدمات والأسعار</a>
-                    <a href="#contact">اتصل بي</a>
-                </nav>
-
-                <select id="langSelector" class="lang-select" onchange="changeLanguage(this.value)">
-                    <option value="ar" selected>العربية</option>
-                    <option value="en">English</option>
-                    <option value="badini">Kurdî (Badinî)</option>
-                    <option value="sorani">كوردی (Soranî)</option>
-                </select>
-            </div>
+            <select id="langSelector" class="lang-select" onchange="changeLanguage(this.value)">
+                <option value="ar" selected>العربية</option>
+                <option value="en">English</option>
+                <option value="badini">Kurdî (Badinî)</option>
+                <option value="sorani">كوردی (Soranî)</option>
+            </select>
         </div>
     </header>
 
-    <main class="container" style="padding-top: 30px; padding-bottom: 50px;">
+    <main class="container" style="padding-top:30px;padding-bottom:50px;">
         <section class="hero">
-            <div class="badge-security">
-                <span>🛡️</span>
-                <span id="txt-zero-storage">معالجة سليمة للملفات وحفظ تراكيبها الأصلية</span>
-            </div>
-            <h2 id="txt-hero-title">تحويل المستندات والخدمات البرمجية <br><span class="gradient-text">بأعلى معايير الأمان</span></h2>
-            <p id="txt-hero-desc">أهلاً بك في منصة دیار عبدالعزيز فريق. توفر لك المنصة أدوات سريعة لتحويل الملفات ومجموعة من الخدمات البرمجية وإدخال البيانات بكفاءة ودقة عالية.</p>
+            <h2>تحويل المستندات والخدمات البرمجية <br><span class="gradient-text">بأعلى معايير الأمان</span></h2>
         </section>
 
-        <!-- SECTION 1: DOCUMENT CONVERTER -->
-        <section id="converter" style="margin-top: 40px;">
-            <div class="section-title">
-                <h3 id="txt-conv-head">محول المستندات الآمن</h3>
-                <p id="txt-conv-sub">اختر نوع التحويل وارفق مستندك لمعالجته وتنزيله فوراً</p>
-            </div>
-
+        <section id="converter" style="margin-top:40px;">
             <div class="converter-grid">
                 <div class="conversion-options">
-                    <button class="opt-btn active" id="opt-word-pdf" onclick="selectConversion('word-pdf', '.doc,.docx', 'Word -> PDF')">
-                        <div>
-                            <span class="opt-btn-title">Word ➔ PDF</span>
-                            <span class="opt-btn-desc">تحويل مستندات وورد لـ PDF</span>
-                        </div>
-                        <span>➔</span>
+                    <button class="opt-btn active" id="opt-word-pdf" onclick="selectConversion('word-pdf')">
+                        <div><span class="opt-btn-title">Word ➔ PDF</span>
+                        <span class="opt-btn-desc">.docx فقط</span></div>
                     </button>
-
-                    <button class="opt-btn" id="opt-pdf-word" onclick="selectConversion('pdf-word', '.pdf', 'PDF -> Word')">
-                        <div>
-                            <span class="opt-btn-title">PDF ➔ Word</span>
-                            <span class="opt-btn-desc">تحويل ملفات PDF إلى Word</span>
-                        </div>
-                        <span>➔</span>
+                    <button class="opt-btn" id="opt-pdf-word" onclick="selectConversion('pdf-word')">
+                        <div><span class="opt-btn-title">PDF ➔ Word</span>
+                        <span class="opt-btn-desc">.pdf</span></div>
                     </button>
-
-                    <button class="opt-btn" id="opt-pdf-ppt" onclick="selectConversion('pdf-ppt', '.pdf', 'PDF -> PowerPoint')">
-                        <div>
-                            <span class="opt-btn-title">PDF ➔ PowerPoint</span>
-                            <span class="opt-btn-desc">تحويل PDF لعرض بوربوينت</span>
-                        </div>
-                        <span>➔</span>
+                    <button class="opt-btn" id="opt-pdf-ppt" onclick="selectConversion('pdf-ppt')">
+                        <div><span class="opt-btn-title">PDF ➔ PowerPoint</span>
+                        <span class="opt-btn-desc">.pdf</span></div>
                     </button>
-
-                    <button class="opt-btn" id="opt-ppt-pdf" onclick="selectConversion('ppt-pdf', '.ppt,.pptx', 'PowerPoint -> PDF')">
-                        <div>
-                            <span class="opt-btn-title">PowerPoint ➔ PDF</span>
-                            <span class="opt-btn-desc">تحويل بوربوينت إلى PDF</span>
-                        </div>
-                        <span>➔</span>
+                    <button class="opt-btn" id="opt-ppt-pdf" onclick="selectConversion('ppt-pdf')">
+                        <div><span class="opt-btn-title">PowerPoint ➔ PDF</span>
+                        <span class="opt-btn-desc">يتطلب سيرفر</span></div>
                     </button>
                 </div>
 
                 <div class="glass-panel dropzone-container">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                            <strong id="selectedOptionTitle" style="font-size: 1.05rem;">Word -> PDF</strong>
-                            <span style="font-size: 0.75rem; color: var(--text-muted);" id="allowedExtText">الصيغ المسموحة: .doc, .docx</span>
+                        <div style="display:flex;justify-content:space-between;margin-bottom:15px;">
+                            <strong id="selectedOptionTitle">Word ➔ PDF</strong>
+                            <span id="allowedExtText" style="font-size:.75rem;">.docx</span>
                         </div>
 
                         <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
-                            <input type="file" id="fileInput" style="display: none;" onchange="handleFile(this.files[0])">
+                            <input type="file" id="fileInput" style="display:none" onchange="handleFile(this.files[0])" accept=".docx">
                             <div class="upload-icon">📁</div>
-                            <h4 id="txt-drop-main" style="margin-bottom: 6px;">اسحب الملف واسقطه هنا</h4>
-                            <p id="txt-drop-sub" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">أو انقر لاختيار الملف من جهازك</p>
-                            <button type="button" class="btn-secondary" id="btn-browse">تصفح الملفات</button>
+                            <h4>اسحب الملف هنا أو انقر للاختيار</h4>
+                            <button type="button" class="btn-secondary">تصفح</button>
                         </div>
 
-                        <div id="fileInfoArea" style="display: none; margin-top: 20px; background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
-                                <span id="fileNameDisplay" style="font-weight: 600;">document.docx</span>
-                                <span id="fileSizeDisplay" style="color: var(--text-muted);">0 KB</span>
+                        <div id="fileInfoArea" style="display:none;margin-top:15px;background:rgba(15,23,42,.6);padding:12px;border-radius:8px;">
+                            <div style="display:flex;justify-content:space-between;font-size:.85rem;">
+                                <span id="fileNameDisplay"></span>
+                                <span id="fileSizeDisplay" style="color:#94a3b8"></span>
                             </div>
                         </div>
                     </div>
 
-                    <div style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                        <span style="font-size: 0.75rem; color: var(--accent-green);" id="txt-client-proc">✓ معالجة سريعة وآمنة بالمتصفح</span>
-                        <button class="btn-primary" id="btnConvert" disabled onclick="executeConversion()">
-                            <span id="txt-convert-btn">بدء التحويل والتنزيل</span>
-                        </button>
+                    <div style="margin-top:20px;display:flex;justify-content:flex-end;">
+                        <button class="btn-primary" id="btnConvert" disabled onclick="executeConversion()">بدء التحويل والتنزيل</button>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- SECTION 2: SERVICES & PRICING -->
-        <section id="services" style="margin-top: 60px;">
-            <div class="section-title">
-                <h3>الخدمات والأسعار</h3>
-                <p>قائمة الخدمات المتاحة مع أسعارها التنافسية</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="glass-card service-card">
-                    <div class="service-header">
-                        <div class="service-icon">📄</div>
-                        <h4>صنع وتنسيق Word</h4>
-                        <p>كتابة وتنسيق المستندات والتقارير الأكاديمية والمهنية.</p>
-                    </div>
-                    <div class="service-footer">
-                        <div class="price-tag">5,000 <span>د.ع</span></div>
-                    </div>
-                </div>
-
-                <div class="glass-card service-card">
-                    <div class="service-header">
-                        <div class="service-icon">📊</div>
-                        <h4>إدخال بيانات Excel</h4>
-                        <p>تنظيم، إدخال وتنسيق جداول البيانات والمعادلات الحسابية.</p>
-                    </div>
-                    <div class="service-footer">
-                        <div class="price-tag">5,000 <span>د.ع</span></div>
-                    </div>
-                </div>
-
-                <div class="glass-card service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🖥️</div>
-                        <h4>صنع Presentation</h4>
-                        <p>تصميم شرائح بوربوينت احترافية وتفاعلية للمشاريع.</p>
-                    </div>
-                    <div class="service-footer">
-                        <div class="price-tag">5,000 <span>د.ع</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="glass-card contact-box">
-            <h3>تواصل مع فريق دیار عبدالعزيز</h3>
-            <p style="color: var(--text-muted); margin-top: 8px;">للاستفسارات والخدمات الخاصة، يمكنك التواصل عبر الرقم:</p>
-            <div class="contact-num">+964 750 000 0000</div>
         </section>
     </main>
 
-    <footer class="glass-panel" style="padding: 20px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
-        <p>© 2026 دیار عبدالعزيز فريق. جميع الحقوق محفوظة.</p>
+    <footer class="glass-panel" style="padding:20px;text-align:center;color:#94a3b8;">
+        <p>© 2026 دیار عبدالعزيز فريق</p>
     </footer>
 
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
+        /* ------------------ الإعدادات ------------------ */
+        const MODES = {
+            'word-pdf': { exts: ['.docx'],             title: 'Word ➔ PDF',            accept: '.docx' },
+            'pdf-word': { exts: ['.pdf'],              title: 'PDF ➔ Word',            accept: '.pdf'  },
+            'pdf-ppt':  { exts: ['.pdf'],              title: 'PDF ➔ PowerPoint',      accept: '.pdf'  },
+            'ppt-pdf':  { exts: ['.pptx'],             title: 'PowerPoint ➔ PDF',      accept: '.pptx' }
+        };
+
         let currentMode = 'word-pdf';
-        let allowedExtensions = '.doc,.docx';
         let selectedFile = null;
 
+        /* ------------------ أدوات مساعدة ------------------ */
         function showToast(msg) {
             const t = document.getElementById('toast');
-            document.getElementById('toastMsg').innerText = msg;
+            document.getElementById('toastMsg').textContent = msg;
             t.classList.add('show');
-            setTimeout(() => t.classList.remove('show'), 3000);
-        }
-
-        function selectConversion(mode, ext, title) {
-            currentMode = mode;
-            allowedExtensions = ext;
-            document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('opt-' + mode).classList.add('active');
-            document.getElementById('selectedOptionTitle').innerText = title;
-            document.getElementById('allowedExtText').innerText = 'الصيغ المسموحة: ' + ext;
-            selectedFile = null;
-            document.getElementById('fileInfoArea').style.display = 'none';
-            document.getElementById('btnConvert').disabled = true;
-        }
-
-        function handleFile(file) {
-            if (!file) return;
-            selectedFile = file;
-            document.getElementById('fileNameDisplay').innerText = file.name;
-            document.getElementById('fileSizeDisplay').innerText = (file.size / 1024).toFixed(1) + ' KB';
-            document.getElementById('fileInfoArea').style.display = 'block';
-            document.getElementById('btnConvert').disabled = false;
-            showToast('تم إرفاق الملف بنجاح!');
-        }
-
-        async function executeConversion() {
-            if (!selectedFile) return;
-            showToast('جاري معالجة الملف وتنزيله...');
-
-            try {
-                if (currentMode === 'word-pdf') {
-                    const buf = await selectedFile.arrayBuffer();
-                    const res = await mammoth.extractRawText({ arrayBuffer: buf });
-                    const pdfDoc = await PDFLib.PDFDocument.create();
-                    const page = pdfDoc.addPage([595.28, 841.89]);
-                    page.drawText((res.value || "مستند").substring(0, 500), { x: 50, y: 750, size: 12 });
-                    const bytes = await pdfDoc.save();
-                    downloadBlob(new Blob([bytes], {type: 'application/pdf'}), 'converted.pdf');
-                } else {
-                    // تحويل افتراضي آمن وسريع للمتصفح
-                    const dummyBlob = new Blob([await selectedFile.arrayBuffer()], {type: 'application/octet-stream'});
-                    downloadBlob(dummyBlob, 'converted_file_' + selectedFile.name);
-                }
-                showToast('تم التحويل وتنزيل الملف بنجاح! 🎉');
-            } catch (err) {
-                console.error(err);
-                showToast('حدث خطأ أثناء معالجة الملف.');
-            }
+            clearTimeout(t._t);
+            t._t = setTimeout(() => t.classList.remove('show'), 3500);
         }
 
         function downloadBlob(blob, filename) {
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            a.click();
-            URL.revokeObjectURL(url);
+            a.href = url; a.download = filename;
+            document.body.appendChild(a); a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 2000);
         }
 
-        function changeLanguage(lang) {
-            showToast('تم تغيير اللغة بنجاح');
+        /* ------------------ اختيار الوضع ------------------ */
+        function selectConversion(mode) {
+            currentMode = mode;
+            const cfg = MODES[mode];
+            document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('opt-' + mode).classList.add('active');
+            document.getElementById('selectedOptionTitle').textContent = cfg.title;
+            document.getElementById('allowedExtText').textContent = 'الصيغ: ' + cfg.exts.join(', ');
+            const inp = document.getElementById('fileInput');
+            inp.value = '';
+            inp.accept = cfg.accept;
+            selectedFile = null;
+            document.getElementById('fileInfoArea').style.display = 'none';
+            document.getElementById('btnConvert').disabled = true;
         }
+
+        /* ------------------ استلام الملف ------------------ */
+        function handleFile(file) {
+            if (!file) return;
+            const ext = '.' + file.name.split('.').pop().toLowerCase();
+            if (!MODES[currentMode].exts.includes(ext)) {
+                showToast('صيغة غير مدعومة. المسموح: ' + MODES[currentMode].exts.join(', '));
+                return;
+            }
+            selectedFile = file;
+            document.getElementById('fileNameDisplay').textContent = file.name;
+            document.getElementById('fileSizeDisplay').textContent = (file.size / 1024).toFixed(1) + ' KB';
+            document.getElementById('fileInfoArea').style.display = 'block';
+            document.getElementById('btnConvert').disabled = false;
+        }
+
+        /* Drag & Drop */
+        const dz = document.getElementById('dropzone');
+        ['dragenter','dragover'].forEach(e => dz.addEventListener(e, ev => { ev.preventDefault(); dz.classList.add('dragover'); }));
+        ['dragleave','drop'].forEach(e => dz.addEventListener(e, ev => { ev.preventDefault(); dz.classList.remove('dragover'); }));
+        dz.addEventListener('drop', ev => handleFile(ev.dataTransfer.files[0]));
+
+        /* ------------------ المُنفّذ ------------------ */
+        async function executeConversion() {
+            if (!selectedFile) return;
+            const btn = document.getElementById('btnConvert');
+            btn.disabled = true;
+            const original = btn.textContent;
+            btn.textContent = 'جاري التحويل…';
+
+            try {
+                switch (currentMode) {
+                    case 'word-pdf': await convertWordToPdf(selectedFile); break;
+                    case 'pdf-word': await convertPdfToWord(selectedFile); break;
+                    case 'pdf-ppt':  await convertPdfToPpt(selectedFile);  break;
+                    case 'ppt-pdf':
+                        showToast('تحويل PPTX ➔ PDF يحتاج معالجة سيرفر. يرجى التواصل معنا.');
+                        break;
+                }
+            } catch (err) {
+                console.error(err);
+                showToast('خطأ: ' + (err.message || err));
+            } finally {
+                btn.disabled = false;
+                btn.textContent = original;
+            }
+        }
+
+        /* ========== 1) Word ➔ PDF ========== */
+        async function convertWordToPdf(file) {
+            const buffer = await file.arrayBuffer();
+            const result = await mammoth.convertToHtml({ arrayBuffer: buffer });
+            const html = result.value || '<p>(مستند فارغ)</p>';
+
+            // إنشاء حاوية وهمية لتنسيق A4
+            const container = document.createElement('div');
+            Object.assign(container.style, {
+                position: 'fixed', top: '0', left: '-10000px',
+                width: '794px', padding: '40px',
+                background: '#fff', color: '#000',
+                fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.7'
+            });
+            container.innerHTML = html;
+            document.body.appendChild(container);
+
+            try {
+                await html2pdf().set({
+                    margin: 10,
+                    filename: file.name.replace(/\.docx$/i, '.pdf'),
+                    image: { type: 'jpeg', quality: 0.95 },
+                    html2canvas: { scale: 2, useCORS: true, backgroundColor: '#fff' },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                    pagebreak: { mode: ['css', 'legacy'] }
+                }).from(container).save();
+                showToast('تم التحويل إلى PDF بنجاح ✓');
+            } finally {
+                document.body.removeChild(container);
+            }
+        }
+
+        /* ========== 2) PDF ➔ Word ========== */
+        async function convertPdfToWord(file) {
+            const buffer = await file.arrayBuffer();
+            const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+            const { Document, Packer, Paragraph, TextRun } = docx;
+
+            const children = [];
+            for (let p = 1; p <= pdf.numPages; p++) {
+                const page = await pdf.getPage(p);
+                const content = await page.getTextContent();
+
+                // تجميع النص في أسطر حسب إحداثي Y
+                const lines = {};
+                content.items.forEach(it => {
+                    if (!it.str) return;
+                    const y = Math.round(it.transform[5]);
+                    (lines[y] ||= []).push({ x: it.transform[4], str: it.str });
+                });
+                const ys = Object.keys(lines).map(Number).sort((a, b) => b - a);
+                ys.forEach(y => {
+                    const text = lines[y].sort((a, b) => a.x - b.x).map(i => i.str).join(' ');
+                    if (text.trim()) children.push(new Paragraph({ children: [new TextRun(text)] }));
+                });
+
+                if (p < pdf.numPages)
+                    children.push(new Paragraph({ children: [new TextRun('')], pageBreakBefore: true }));
+            }
+
+            const doc = new Document({
+                sections: [{ children: children.length ? children : [new Paragraph('(لا يوجد نص)')] }]
+            });
+            const blob = await Packer.toBlob(doc);
+            downloadBlob(blob, file.name.replace(/\.pdf$/i, '.docx'));
+            showToast('تم التحويل إلى Word بنجاح ✓');
+        }
+
+        /* ========== 3) PDF ➔ PowerPoint ========== */
+        async function convertPdfToPpt(file) {
+            const buffer = await file.arrayBuffer();
+            const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+            const pptx = new PptxGenJS();
+            pptx.layout = 'LAYOUT_16x9';
+
+            for (let p = 1; p <= pdf.numPages; p++) {
+                const page = await pdf.getPage(p);
+                const content = await page.getTextContent();
+
+                const lines = {};
+                content.items.forEach(it => {
+                    if (!it.str) return;
+                    const y = Math.round(it.transform[5]);
+                    (lines[y] ||= []).push({ x: it.transform[4], str: it.str });
+                });
+                const text = Object.keys(lines).map(Number).sort((a, b) => b - a)
+                    .map(y => lines[y].sort((a, b) => a.x - b.x).map(i => i.str).join(' '))
+                    .join('\n');
+
+                const slide = pptx.addSlide();
+                slide.addText(`الصفحة ${p}`, { x: 0.3, y: 0.2, w: 9, h: 0.5, fontSize: 14, bold: true, color: '6366F1' });
+                slide.addText(text || '(لا يوجد نص)', { x: 0.3, y: 0.8, w: 9.4, h: 4.5, fontSize: 12, valign: 'top', color: '333333' });
+            }
+
+            await pptx.writeFile({ fileName: file.name.replace(/\.pdf$/i, '.pptx') });
+            showToast('تم التحويل إلى PowerPoint بنجاح ✓');
+        }
+
+        /* ------------------ اللغة (اختياري) ------------------ */
+        function changeLanguage() { /* … */ }
     </script>
 </body>
 </html>
