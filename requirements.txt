@@ -3,3 +3,5 @@ flask-cors
 pdf2docx
 python-docx
 gunicorn
+pdf2image
+python-pptx
