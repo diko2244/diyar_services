@@ -1,8 +1,14 @@
-# 1. تحميل بيئة بايثون
-FROM python:3.11-slim
+# استخدام صورة أوبنتو الرسمية (أكثر استقراراً لتثبيت LibreOffice والخطوط)
+FROM ubuntu:22.04
 
-# 2. تثبيت برنامج LibreOffice + خطوط عربية وكوردية
+# تعطيل الأسئلة التفاعلية أثناء التثبيت
+ENV DEBIAN_FRONTEND=noninteractive
+
+# تثبيت LibreOffice والخطوط العربية والكوردية
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    libreoffice \
     libreoffice-writer \
     libreoffice-impress \
     libreoffice-calc \
@@ -12,16 +18,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-hosny-amiri \
     && rm -rf /var/lib/apt/lists/*
 
-# 3. إنشاء مجلد العمل
+# تعيين مجلد العمل
 WORKDIR /app
 
-# 4. نسخ ملف المتطلبات وتثبيت مكتبات بايثون
+# نسخ ملف المتطلبات وتثبيت مكتبات بايثون
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-# 5. نسخ باقي ملفات المشروع
+# نسخ باقي ملفات المشروع
 COPY . .
 
-# 6. فتح المنفذ وتشغيل السيرفر
+# فتح المنفذ وتشغيل السيرفر
 EXPOSE 10000
 CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--workers", "1", "--threads", "4", "--timeout", "180", "app:app"]
