@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دیار عبدالعزيز فريق | منصة الخدمات وتحويل المستندات الآمنة</title>
+    <!-- عنوان الموقع الذي سيظهر في نتائج بحث جوجل -->
+
+<!-- الكلمات المفتاحية (SEO Keywords) باللغات الكوردية والعربية والإنجليزية -->
+<meta name="keywords" content="گوهڕينا فايلا, دروستكرن بريسنتايشن, دیار عبدالعزيز فريق, تحويل word الى pdf, تحويل pdf الى powerpoint, صنع داتابيس, access, excel, admindiko, diar abdulaziz, file converter kurdish">
+
+<!-- وصف الموقع الذي يظهر تحت الرابط في محرك بحث جوجل -->
+<meta name="description" content="موقع دیار عبدالعزيز فريق لـ گوهڕينا فايلا (تحويل الملفات) آمن 100%، دروستكرن بريسنتايشن PowerPoint، تصميم قواعد بيانات Access، وإدخال بيانات Excel بأسعار مناسبة.">
+
+<!-- الأكواد الخاصة بمشاركة الرابط على فيسبوك وتليجرام (Open Graph) -->
+<meta property="og:title" content="دیار عبدالعزيز فريق - الخدمات السريعة وتحويل الملفات">
+<meta property="og:description" content="منصة آمنة وسريعة لـ گوهڕينا فايلا و دروستكرن بريسنتايشن وقواعد البيانات.">
+<meta property="og:type" content="website">
+
+    
+    <style>
+        /* Modern CSS Reset & Variable Definitions */
+        :root {
+            --bg-color: #0b0f19;
+            --panel-bg: rgba(17, 24, 39, 0.85);
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --card-hover: rgba(51, 65, 85, 0.8);
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(99, 102, 241, 0.4);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Layout & Utilities */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7, #6366f1, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: justify;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .brand-text h1 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Language Switcher Styling */
+        .lang-select {
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .lang-select:focus {
+            border-color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 0 20px 0;
+        }
+
+        .badge-security {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        /* Section Layouts */
+        .section-title {
+            margin-bottom: 24px;
+        }
+
+        .section-title h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Converter Layout */
+        .converter-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 24px;
+        }
+
+        .conversion-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .opt-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            cursor: pointer;
+            text-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .opt-btn:hover, .opt-btn.active {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
+            color: var(--text-main);
+        }
+
+        .opt-btn-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .opt-btn-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .dropzone-container {
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dropzone {
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-md);
+            padding: 50px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .dropzone:hover, .dropzone.dragover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .upload-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        /* Services Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+        }
+
+        .service-header {
+            margin-bottom: 16px;
+        }
+
+        .service-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-md);
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .service-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .service-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .price-tag span {
+            font-size: 0.75rem;
+            font-weight: normal;
+            color: var(--accent-cyan);
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-container {
+            width: 100%;
+            max-width: 550px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-body {
+            padding: 24px;
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(17, 24, 39, 0.95);
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 200;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Contact Section Card */
+        .contact-box {
+            text-align: center;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            margin-top: 40px;
+        }
+
+        .contact-num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            direction: ltr;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .converter-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">
+        <span id="toastMsg">رسالة التنبيه</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="glass-panel">
+        <div class="container header-content">
+            <!-- Brand Logo with Secret Triple Click Action -->
+            <div class="brand-logo" id="secretLogo" title="دیار عبدالعزيز فريق">
+                <div class="logo-icon">D</div>
+                <div class="brand-text">
+                    <h1>دیار عبدالعزيز فريق</h1>
+                    <span><i class="pulse-dot"></i> <span id="txt-security-status">حماية قصوى 100%</span></span>
+                </div>
+            </div>
+
+            <!-- Header Navigation & Language Selector -->
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <nav>
+                    <a href="#converter" id="nav-converter">محول الملفات</a>
+                    <a href="#services" id="nav-services">الخدمات والأسعار</a>
+                    <a href="#request" id="nav-request">تقديم طلب</a>
+                    <a href="#contact" id="nav-contact">اتصل بي</a>
+                </nav>
+
+                <!-- Language Switcher Dropdown (4 Languages Supported) -->
+                <select id="langSelector" class="lang-select" onchange="changeLanguage(this.value)">
+                    <option value="ar" selected>العربية</option>
+                    <option value="en">English</option>
+                    <option value="badini">Kurdî (Badinî)</option>
+                    <option value="sorani">كوردی (Soranî)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="container" style="padding-top: 30px; padding-bottom: 50px;">
+
+        <!-- Hero Welcome Header -->
+        <section class="hero">
+            <div class="badge-security">
+                <span>🛡️</span>
+                <span id="txt-zero-storage">معالجة فورية داخل المتصفح بدون تخزين أي ملفات</span>
+            </div>
+            <h2 id="txt-hero-title">تحويل المستندات والخدمات البرمجية <br><span class="gradient-text" id="txt-hero-sub">بأعلى معايير الأمان</span></h2>
+            <p id="txt-hero-desc">أهلاً بك في منصة دیار عبدالعزيز فريق. توفر لك المنصة أدوات سريعة لتحويل الملفات ومجموعة من الخدمات البرمجية وإدخال البيانات بكفاءة ودقة عالية.</p>
+        </section>
+
+        <!-- SECTION 1: DOCUMENT CONVERTER -->
+        <section id="converter" style="margin-top: 40px;">
+            <div class="section-title">
+                <h3 id="txt-conv-head">محول المستندات الآمن</h3>
+                <p id="txt-conv-sub">اختر نوع التحويل وارفق مستندك (يتم التثبت من خلو الملفات من السكريبتات والملفات الخبيثة تلقائياً)</p>
+            </div>
+
+            <div class="converter-grid">
+                <!-- Options Panel -->
+                <div class="conversion-options">
+                    <button class="opt-btn active" id="opt-word-pdf" onclick="selectConversion('word-pdf', '.doc,.docx', 'Word -> PDF')">
+                        <div>
+                            <span class="opt-btn-title">Word ➔ PDF</span>
+                            <span class="opt-btn-desc" id="lbl-w2p">تحويل مستندات وورد لـ PDF</span>
+                        </div>
+                        <span>➔</span>
+                    </button>
+
+                    <button class="opt-btn" id="opt-pdf-word" onclick="selectConversion('pdf-word', '.pdf', 'PDF -> Word')">
+                        <div>
+                            <span class="opt-btn-title">PDF ➔ Word</span>
+                            <span class="opt-btn-desc" id="lbl-p2w">تحويل ملفات PDF إلى Word</span>
+                        </div>
+                        <span>➔</span>
+                    </button>
+
+                    <button class="opt-btn" id="opt-pdf-ppt" onclick="selectConversion('pdf-ppt', '.pdf', 'PDF -> PowerPoint')">
+                        <div>
+                            <span class="opt-btn-title">PDF ➔ PowerPoint</span>
+                            <span class="opt-btn-desc" id="lbl-p2ppt">تحويل PDF لعرض بوربوينت</span>
+                        </div>
+                        <span>➔</span>
+                    </button>
+
+                    <button class="opt-btn" id="opt-ppt-pdf" onclick="selectConversion('ppt-pdf', '.ppt,.pptx', 'PowerPoint -> PDF')">
+                        <div>
+                            <span class="opt-btn-title">PowerPoint ➔ PDF</span>
+                            <span class="opt-btn-desc" id="lbl-ppt2p">تحويل بوربوينت إلى PDF</span>
+                        </div>
+                        <span>➔</span>
+                    </button>
+
+                    <button class="opt-btn" id="opt-word-ppt" onclick="selectConversion('word-ppt', '.doc,.docx', 'Word -> PowerPoint')">
+                        <div>
+                            <span class="opt-btn-title">Word ➔ PowerPoint</span>
+                            <span class="opt-btn-desc" id="lbl-w2ppt">تحويل Word لـ بوربوينت</span>
+                        </div>
+                        <span>➔</span>
+                    </button>
+
+                    <button class="opt-btn" id="opt-ppt-word" onclick="selectConversion('ppt-word', '.ppt,.pptx', 'PowerPoint -> Word')">
+                        <div>
+                            <span class="opt-btn-title">PowerPoint ➔ Word</span>
+                            <span class="opt-btn-desc" id="lbl-ppt2w">تحويل بوربوينت لمستند Word</span>
+                        </div>
+                        <span>➔</span>
+                    </button>
+                </div>
+
+                <!-- Dropzone Utility -->
+                <div class="glass-panel dropzone-container">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <strong id="selectedOptionTitle" style="font-size: 1.05rem;">Word -> PDF</strong>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);" id="allowedExtText">الصيغ المسموحة: .doc, .docx</span>
+                        </div>
+
+                        <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
+                            <input type="file" id="fileInput" style="display: none;" onchange="handleFile(this.files[0])">
+                            <div class="upload-icon">📁</div>
+                            <h4 id="txt-drop-main" style="margin-bottom: 6px;">اسحب الملف واسقطه هنا</h4>
+                            <p id="txt-drop-sub" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">أو انقر لاختيار الملف من جهازك</p>
+                            <button type="button" class="btn-secondary" id="btn-browse">browse_file</button>
+                        </div>
+
+                        <!-- Progress Display -->
+                        <div id="fileInfoArea" style="display: none; margin-top: 20px; background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
+                                <span id="fileNameDisplay" style="font-weight: 600;">document.docx</span>
+                                <span id="fileSizeDisplay" style="color: var(--text-muted);">0 KB</span>
+                            </div>
+                            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                                <div id="progressBar" style="width: 0%; height: 100%; background: var(--primary); transition: width 0.3s ease;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                        <span style="font-size: 0.75rem; color: var(--accent-green);" id="txt-client-proc">✓ معالجة محلية آمنة 100%</span>
+                        <button class="btn-primary" id="btnConvert" disabled onclick="executeConversion()">
+                            <span id="txt-convert-btn">بدء التحويل والتنزيل</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SERVICES & PRICING -->
+        <section id="services" style="margin-top: 60px;">
+            <div class="section-title">
+                <h3 id="txt-serv-title">الخدمات والأسعار</h3>
+                <p id="txt-serv-sub">قائمة الخدمات المتاحة مع أسعارها التنافسية المحسوبة</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="glass-card service-card">
+                    <div class="service-header">
+                        <div class="service-icon">📄</div>
+                        <h4 id="srv1-title">صنع وتنسيق Word</h4>
+                        <p id="srv1-desc">كتابة وتنسيق المستندات والتقارير الأكاديمية والمهنية بأسلوب احترافي.</p>
+                    </div>
+                    <div class="service-footer">
+                        <div class="price-tag">5,000 <span id="curr1">د.ع</span></div>
+                        <button class="btn-secondary" onclick="preselectService('صنع مستند Word')" id="btn-order1">طلب الخدمة</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card service-card">
+                    <div class="service-header">
+                        <div class="service-icon">📊</div>
+                        <h4 id="srv2-title">إدخال بيانات Excel</h4>
+                        <p id="srv2-desc">تنظيم، إدخال وتنسيق جداول البيانات والمعادلات الحسابية في Excel.</p>
+                    </div>
+                    <div class="service-footer">
+                        <div class="price-tag">5,000 <span id="curr2">د.ع</span></div>
+                        <button class="btn-secondary" onclick="preselectService('إدخال بيانات Excel')" id="btn-order2">طلب الخدمة</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🖥️</div>
+                        <h4 id="srv3-title">صنع Presentation</h4>
+                        <p id="srv3-desc">تصميم شرائح بوربوينت احترافية وتفاعلية للمشاريع والعروض.</p>
+                    </div>
+                    <div class="service-footer">
+                        <div class="price-tag">5,000 <span id="curr3">د.ع</span></div>
+                        <button class="btn-secondary" onclick="preselectService('صنع Presentation')" id="btn-order3">طلب الخدمة</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🗄️</div>
+                        <h4 id="srv4-title">قاعدة بيانات Access (متوسط)</h4>
+                        <p id="srv4-desc">تصميم قاعدة بيانات متوسطة مع النماذج والجداول والاستعلامات.</p>
+                    </div>
+                    <div class="service-footer">
+                        <div class="price-tag">10,000 <span id="curr4">د.ع</span></div>
+                        <button class="btn-secondary" onclick="preselectService('قاعدة بيانات Access متوسطة')" id="btn-order4">طلب الخدمة</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏛️</div>
+                        <h4 id="srv5-title">قاعدة بيانات Access (كبير)</h4>
+                        <p id="srv5-desc">بناء نظام قاعدة بيانات متكامل وكبير للمؤسسات والشركات.</p>
+                    </div>
+                    <div class="service-footer">
+                        <div class="price-tag">20,000 <span id="curr5">د.ع</span></div>
+                        <button class="btn-secondary" onclick="preselectService('قاعدة بيانات Access كبيرة')" id="btn-order5">طلب الخدمة</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card service-card" style="border-color: rgba(6, 182, 212, 0.3);">
+                    <div class="service-header">
+                        <div class="service-icon" style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1);">💻</div>
+                        <h4 id="srv6-title">صنع كود / سيستم خاص</h4>
+                        <p id="srv6-desc">برمجة أنظمة، برامج وأكواد خاصة مخصصة بالكامل حسب طلبك.</p>
+                    </div>
+                    <div class="service-footer">
+                        <div class="price-tag" style="color: var(--accent-cyan);" id="lbl-custom-price">سعر خاص</div>
+                        <button class="btn-primary" onclick="preselectService('صنع كود / سيستم خاص')" id="btn-order6">طلب نظام خاص</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: REQUEST FORM -->
+        <section id="request" style="margin-top: 60px;">
+            <div class="glass-panel" style="padding: 35px; border-radius: var(--radius-lg); max-width: 750px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <h3 id="txt-form-head" style="font-size: 1.6rem; font-weight: 800;">إرسال طلب خدمة جديد</h3>
+                    <p id="txt-form-sub" style="font-size: 0.85rem; color: var(--text-muted);">أدخل وسيلة تواصلك وتفاصيل الطلب وسيصلنا طلبك فوراً</p>
+                </div>
+
+                <form onsubmit="submitServiceForm(event)">
+                    <div class="form-group">
+                        <label id="lbl-sel-service">نوع الخدمة المطلوب *</label>
+                        <select id="reqServiceType" required class="form-control">
+                            <option value="" disabled selected>-- اختر الخدمة --</option>
+                            <option value="صنع مستند Word">صنع مستند Word (5,000 د.ع)</option>
+                            <option value="إدخال بيانات Excel">إدخال بيانات Excel (5,000 د.ع)</option>
+                            <option value="صنع Presentation">صنع Presentation / بوربوينت (5,000 د.ع)</option>
+                            <option value="قاعدة بيانات Access متوسطة">قاعدة بيانات Access - متوسط (10,000 د.ع)</option>
+                            <option value="قاعدة بيانات Access كبيرة">قاعدة بيانات Access - كبير (20,000 د.ع)</option>
+                            <option value="صنع كود / سيستم خاص">صنع كود / سيستم خاص (سعر خاص)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="lbl-contact-info">رقم الهاتف / تليجرام / سناب شات *</label>
+                        <input type="text" id="reqContact" required placeholder="0750XXXXXXX أو @username" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label id="lbl-user-name">الاسم الكامل (اختياري)</label>
+                        <input type="text" id="reqName" placeholder="اسمك الكريم" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label id="lbl-details">تفاصيل وحجم العمل *</label>
+                        <textarea id="reqDetails" required placeholder="اكتب تفاصيل طلبك هنا..." class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;" id="btn-submit-req">
+                        إرسال الطلب الآلي
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT INFO -->
+        <section id="contact">
+            <div class="glass-panel contact-box">
+                <h3 id="txt-contact-title">تواصل معي مباشرة (Contact Me)</h3>
+                <p id="txt-contact-sub" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">لأي استفسار فوري أو طلب كود وسيستم خاص:</p>
+                
+                <div style="margin-top: 20px;">
+                    <div style="font-weight: 700; font-size: 1.1rem;">دیار عبدالعزيز فريق</div>
+                    <a href="tel:07518477415" class="contact-num">07518477415</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- HIDDEN ADMIN MODAL (No public buttons lead here) -->
+    <div id="adminModal" class="modal-overlay">
+        <div class="glass-panel modal-container">
+            <div class="modal-header">
+                <h4 style="color: #fff; font-size: 1.05rem;" id="txt-admin-title">🔒 لوحة الأدمن المشددة</h4>
+                <button onclick="closeAdminModal()" class="btn-secondary" style="padding: 4px 10px;">✕</button>
+            </div>
+
+            <!-- Login View -->
+            <div id="adminLoginBody" class="modal-body">
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; text-align: center;" id="txt-admin-sub">تسجيل الدخول مقتصر فقط على الأدمن admindiko</p>
+                <form onsubmit="handleAdminLogin(event)">
+                    <div class="form-group">
+                        <label>اسم المستخدم (Username)</label>
+                        <input type="text" id="adminUser" required class="form-control" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور (Password)</label>
+                        <input type="password" id="adminPass" required class="form-control">
+                    </div>
+                    
+                    <div id="lockoutMsg" style="display: none; color: var(--accent-red); font-weight: bold; font-size: 0.8rem; text-align: center; margin-bottom: 10px;">
+                        تم القفل المؤقت للكشوفات الخاطئة. انتظر <span id="lockoutSec">30</span> ثانية.
+                    </div>
+
+                    <button type="submit" id="adminAuthBtn" class="btn-primary" style="width: 100%;">تسجيل الدخول الآمن</button>
+                </form>
+            </div>
+
+            <!-- Dashboard View -->
+            <div id="adminDashBody" class="modal-body" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                    <div>
+                        <strong style="font-size: 0.95rem;">الطلبات الواردة</strong>
+                        <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">محفوظة محلياً في المتصفح</span>
+                    </div>
+                    <button onclick="adminLogout()" class="btn-secondary" style="color: var(--accent-red); font-size: 0.8rem;">خروج</button>
+                </div>
+                
+                <div id="adminRequestsContainer" style="display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Requests dynamically generated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-color); padding: 25px 0; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; <span id="yr"></span> | <strong>دیار عبدالعزيز فريق</strong></p>
+            <p style="font-size: 0.7rem; margin-top: 5px; opacity: 0.6;">(للأدمن: اضغط 3 مرات على الشعار أو Ctrl+Shift+A للدخول)</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Core Logic -->
+    <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
+        // ----------------------------------------------------------------
+        // 1. TRANSLATION DICTIONARY & LANGUAGE SWITCHER CORE
+        // ----------------------------------------------------------------
+        const translations = {
+            ar: {
+                dir: 'rtl',
+                secStatus: 'حماية قصوى 100%',
+                navConv: 'محول الملفات',
+                navServ: 'الخدمات والأسعار',
+                navReq: 'تقديم طلب',
+                navContact: 'اتصل بي',
+                zeroStore: 'معالجة فورية داخل المتصفح بدون تخزين أي ملفات',
+                heroTitle: 'تحويل المستندات والخدمات البرمجية <br><span class="gradient-text">بأعلى معايير الأمان</span>',
+                heroDesc: 'أهلاً بك في منصة دیار عبدالعزيز فريق. توفر لك المنصة أدوات سريعة لتحويل الملفات ومجموعة من الخدمات البرمجية وإدخال البيانات بكفاءة ودقة عالية.',
+                convHead: 'محول المستندات الآمن',
+                convSub: 'اختر نوع التحويل وارفق مستندك (يتم التثبت من خلو الملفات من السكريبتات والملفات الخبيثة تلقائياً)',
+                lblW2P: 'تحويل مستندات وورد لـ PDF',
+                lblP2W: 'تحويل ملفات PDF إلى Word',
+                lblP2PPT: 'تحويل PDF لعرض بوربوينت',
+                lblPPT2P: 'تحويل بوربوينت إلى PDF',
+                lblW2PPT: 'تحويل Word لـ بوربوينت',
+                lblPPT2W: 'تحويل بوربوينت لمستند Word',
+                dropMain: 'اسحب الملف واسقطه هنا',
+                dropSub: 'أو انقر لاختيار الملف من جهازك',
+                btnBrowse: 'تصفح الملفات',
+                clientProc: '✓ معالجة محلية آمنة 100%',
+                btnConvert: 'بدء التحويل والتنزيل',
+                servTitle: 'الخدمات والأسعار',
+                servSub: 'قائمة الخدمات المتاحة مع أسعارها التنافسية المحسوبة',
+                srv1Title: 'صنع وتنسيق Word',
+                srv1Desc: 'كتابة وتنسيق المستندات والتقارير الأكاديمية والمهنية بأسلوب احترافي.',
+                srv2Title: 'إدخال بيانات Excel',
+                srv2Desc: 'تنظيم، إدخال وتنسيق جداول البيانات والمعادلات الحسابية في Excel.',
+                srv3Title: 'صنع Presentation',
+                srv3Desc: 'تصميم شرائح بوربوينت احترافية وتفاعلية للمشاريع والعروض.',
+                srv4Title: 'قاعدة بيانات Access (متوسط)',
+                srv4Desc: 'تصميم قاعدة بيانات متوسطة مع النماذج والجداول والاستعلامات.',
+                srv5Title: 'قاعدة بيانات Access (كبير)',
+                srv5Desc: 'بناء نظام قاعدة بيانات متكامل وكبير للمؤسسات والشركات.',
+                srv6Title: 'صنع كود / سيستم خاص',
+                srv6Desc: 'برمجة أنظمة، برامج وأكواد خاصة مخصصة بالكامل حسب طلبك.',
+                customPrice: 'سعر خاص',
+                btnOrder: 'طلب الخدمة',
+                btnOrderSpecial: 'طلب نظام خاص',
+                curr: 'د.ع',
+                formHead: 'إرسال طلب خدمة جديد',
+                formSub: 'أدخل وسيلة تواصلك وتفاصيل الطلب وسيصلنا طلبك فوراً',
+                lblSelService: 'نوع الخدمة المطلوب *',
+                lblContactInfo: 'رقم الهاتف / تليجرام / سناب شات *',
+                lblUserName: 'الاسم الكامل (اختياري)',
+                lblDetails: 'تفاصيل وحجم العمل *',
+                btnSubmitReq: 'إرسال الطلب الآلي',
+                contactTitle: 'تواصل معي مباشرة (Contact Me)',
+                contactSub: 'لأي استفسار فوري أو طلب كود وسيستم خاص:'
+            },
+            en: {
+                dir: 'ltr',
+                secStatus: 'Max Security 100%',
+                navConv: 'File Converter',
+                navServ: 'Services & Pricing',
+                navReq: 'Submit Request',
+                navContact: 'Contact Me',
+                zeroStore: 'Instant client-side processing with Zero Cloud Storage',
+                heroTitle: 'Document Conversion & Software Services <br><span class="gradient-text">With Highest Security</span>',
+                heroDesc: 'Welcome to Diyar Abdulaziz Fareeq platform. Fast tools for file conversion and custom programming services.',
+                convHead: 'Secure Document Converter',
+                convSub: 'Select conversion type and upload document (Malicious scripts are automatically blocked)',
+                lblW2P: 'Convert Word documents to PDF',
+                lblP2W: 'Convert PDF files to Word',
+                lblP2PPT: 'Convert PDF to PowerPoint presentation',
+                lblPPT2P: 'Convert PowerPoint to PDF',
+                lblW2PPT: 'Convert Word to PowerPoint',
+                lblPPT2W: 'Convert PowerPoint to Word document',
+                dropMain: 'Drag & Drop your file here',
+                dropSub: 'or click to browse from your device',
+                btnBrowse: 'Browse Files',
+                clientProc: '✓ 100% Safe Local Processing',
+                btnConvert: 'Start Conversion & Download',
+                servTitle: 'Services & Pricing',
+                servSub: 'List of available services with clear calculation rates',
+                srv1Title: 'Word Formatting & Creation',
+                srv1Desc: 'Writing and formatting academic and professional reports.',
+                srv2Title: 'Excel Data Entry',
+                srv2Desc: 'Organizing and entering data and formulas into Excel sheets.',
+                srv3Title: 'Presentation Design',
+                srv3Desc: 'Designing interactive PowerPoint slides for projects.',
+                srv4Title: 'Access Database (Medium)',
+                srv4Desc: 'Designing medium databases with queries and forms.',
+                srv5Title: 'Access Database (Large)',
+                srv5Desc: 'Building large integrated database systems for organizations.',
+                srv6Title: 'Custom Code / System',
+                srv6Desc: 'Programming customized software, tools, and scripts.',
+                customPrice: 'Custom Price',
+                btnOrder: 'Order Service',
+                btnOrderSpecial: 'Order Custom System',
+                curr: 'IQD',
+                formHead: 'Submit New Service Request',
+                formSub: 'Provide contact details and requirements for instant dispatch',
+                lblSelService: 'Required Service Type *',
+                lblContactInfo: 'Phone / Telegram / Snapchat *',
+                lblUserName: 'Full Name (Optional)',
+                lblDetails: 'Job Details & Specifications *',
+                btnSubmitReq: 'Submit Automated Request',
+                contactTitle: 'Contact Me Directly',
+                contactSub: 'For instant queries or custom software requests:'
+            },
+            badini: {
+                dir: 'ltr',
+                secStatus: 'سێكيوريتيا تەمام 100%',
+                navConv: 'گوهوررينا فايلا',
+                navServ: 'خزمەتگوزاري و بيێو',
+                navReq: 'داخوازيا خزمه‌تێ',
+                navContact: 'پەيوەندي',
+                zeroStore: 'كرن و گوهوررينا فايلا ل سه‌ر مۆبايل يا كومپيوته‌را ته‌ ب بيێ خه‌زنكرن',
+                heroTitle: 'گوهوررينا فايلا و دروستكرنا سيستەمان <br><span class="gradient-text">ب بلنترين ئاستێ پاراستنێ</span>',
+                heroDesc: 'بخێربهێی بۆ پلاتفۆڕما ديار عبدالعزيز فەريق. خزمه‌تگوزاريێن بلەز بۆ گوهوررينا فايلا و دروستكرنا بەرهەمان.',
+                convHead: 'گوهوره‌رێ فايلا يێ ئێمن',
+                convSub: 'جۆرێ گوهوررينێ هه‌لبژێره‌ (فايلێن خراب و ڤايروس ئێكسه‌ر تێنە بلۆك كرن)',
+                lblW2P: 'گوهوررينا Word بۆ PDF',
+                lblP2W: 'گوهوررينا PDF بۆ Word',
+                lblP2PPT: 'گوهوررينا PDF بۆ PowerPoint',
+                lblPPT2P: 'گوهوررينا PowerPoint بۆ PDF',
+                lblW2PPT: 'گوهوررينا Word بۆ PowerPoint',
+                lblPPT2W: 'گوهوررينا PowerPoint بۆ Word',
+                dropMain: 'فايلي رابكێشە ڤێرێ',
+                dropSub: 'يان كليك بكە بۆ هه‌لبژارتنا فايلي',
+                btnBrowse: 'هه‌لبژارتنا فايلي',
+                clientProc: '✓ پاراستنا تەمام ل سه‌ر ئامێڕێ تە',
+                btnConvert: 'دەستپێكرنا گوهوررينێ و داگرتن',
+                servTitle: 'خزمەتگوزاري و نرخ',
+                servSub: 'لبيستا خزمه‌تگوزاريان ب نرخێن دياركرى',
+                srv1Title: 'دروستكرنا فايلا Word',
+                srv1Desc: 'نڤيسين و رێكخستنا راپۆرت و فايلا ب شێوەكێ پرۆفێشنال.',
+                srv2Title: 'تۆماركرنا داتايێن Excel',
+                srv2Desc: 'رێكخستن و داخلكرنا داتايێن ئه‌كسل و معادلا.',
+                srv3Title: 'دروستكرنا پريزێنتێشن',
+                srv3Desc: 'ديزاينا سلايدێن پاوەربۆينت بۆ پڕۆژان.',
+                srv4Title: 'داتا بيس Access (ناڤنجي)',
+                srv4Desc: 'دروستكرنا داتابيسێن ناڤنجي ب فۆرم و خشتەيان.',
+                srv5Title: 'داتا بيس Access (مەزن)',
+                srv5Desc: 'ئاڤاكرنا سيستەمێن مەزن بۆ كومپانيان.',
+                srv6Title: 'دروستكرنا كۆد و سيستەمێن تايبەت',
+                srv6Desc: 'پڕۆگرامكرنا سيستەم و كۆدێن تايبه‌ت دووڤ داخوازيا تە.',
+                customPrice: 'نرخێ تايبەت',
+                btnOrder: 'داخوازكرنا خزمه‌تێ',
+                btnOrderSpecial: 'داخوازكرنا سيستەمي',
+                curr: 'د.ع',
+                formHead: 'هنارتنا داخوازيێ',
+                formSub: 'زانياريێن پەيوەنديێ بنڤيسە دا كوراتي په‌يوه‌نديێ بكەين',
+                lblSelService: 'جۆرێ خزمه‌تێ *',
+                lblContactInfo: 'ژمارا تەلەفۆنێ / تێليگرام / سناپ *',
+                lblUserName: 'ناوێ تە (ئارەزوومەندانا)',
+                lblDetails: 'تێبيني و هووركاريێن كاري *',
+                btnSubmitReq: 'هنارتنا داخوازيا بلەز',
+                contactTitle: 'پەيوەنديا ئێكسه‌ر',
+                contactSub: 'بۆ هه‌ر پرسيارەكێ يان داخوازكرنا كۆدان:'
+            },
+            sorani: {
+                dir: 'rtl',
+                secStatus: 'پاراستنی ته‌واو 100%',
+                navConv: 'گۆڕینی فایله‌كان',
+                navServ: 'خزمەتگوزاری و نرخ',
+                navReq: 'ناردنی داواکاری',
+                navContact: 'پەیوەندی',
+                zeroStore: 'گۆڕینی خێرای فایلەکان لەسەر ئامێرەکەت بەبێ هەڵگرتن لە سێرڤەر',
+                heroTitle: 'گۆڕینی بەڵگەنامەکان و خزمەتگوزاری بەرنامەسازی <br><span class="gradient-text">بە بەرزترین ئاستی ئاسایش</span>',
+                heroDesc: 'بەخێر بێن بۆ پلاتفۆرمی دیار عبدالعزیز فەریق. ئامرازی خێرا بۆ گۆڕینی فایلەکان و دروستکردنی سیستەم.',
+                convHead: 'گۆڕەری ئاسوودەی فایلەکان',
+                convSub: 'جۆری گۆڕین هەڵبژێرە (فایلی زیانبەخش خۆکارانە بلۆک دەکرێت)',
+                lblW2P: 'گۆڕینی Word بۆ PDF',
+                lblP2W: 'گۆڕینی PDF بۆ Word',
+                lblP2PPT: 'گۆڕینی PDF بۆ PowerPoint',
+                lblPPT2P: 'گۆڕینی PowerPoint بۆ PDF',
+                lblW2PPT: 'گۆڕینی Word بۆ PowerPoint',
+                lblPPT2W: 'گۆڕینی PowerPoint بۆ Word',
+                dropMain: 'فایلەکە ڕابکێشە ئێرە',
+                dropSub: 'یاخود کلیک بکە بۆ هەڵبژاردنی فایل',
+                btnBrowse: 'هەڵبژاردنی فایل',
+                clientProc: '✓ ئاسایشی 100% لای بەکارهێنەر',
+                btnConvert: 'دەستپێکردنی گۆڕین و داگرتن',
+                servTitle: 'خزمەتگوزاری و نرخەکان',
+                servSub: 'لیستی خزمەتگوزارییە بەردەستەکان بە نرخی ڕوون',
+                srv1Title: 'دروستکردن و ڕێکخستنی Word',
+                srv1Desc: 'نووسین و ڕێکخستنی ڕاپۆرت و بەڵگەنامەکان بە شێوازی پرۆفێشناڵ.',
+                srv2Title: 'داخڵکردنی داتای Excel',
+                srv2Desc: 'ڕێکخستن و داخڵکردنی زانیارییەکان لە خشتەکانی ئێکستڵ.',
+                srv3Title: 'دروستکردنی Presentation',
+                srv3Desc: 'دیزاینکردنی سڵایدی پاوەرپۆینتی سەرنجڕاکێش بۆ پڕۆژەکان.',
+                srv4Title: 'داتابەیسی Access (ناوەند)',
+                srv4Desc: 'دیزاینکردنی داتابەیسی ناوەند بە فۆڕم و خشتەکان.',
+                srv5Title: 'داتابەیسی Access (گەورە)',
+                srv5Desc: 'دروستکردنی سیستەمی داتابەیسی گەورە و تەواو بۆ کۆمپانیاکان.',
+                srv6Title: 'دروستکردنی کۆد و سیستەمی تایبەت',
+                srv6Desc: 'بەرنامەسازی سیستەم و کۆدی تایبەت بەپێی داواکاری تۆ.',
+                customPrice: 'نرخی تایبەت',
+                btnOrder: 'داواکردنی خزمەتگوزاری',
+                btnOrderSpecial: 'داواکردنی سیستەم',
+                curr: 'د.ع',
+                formHead: 'ناردنی داواکاری نوێ',
+                formSub: 'زانیاری پەیوەندی و داواکارییەکان بنووسە بۆ پەیوەندیکردن',
+                lblSelService: 'جۆری خزمەتگوزاری *',
+                lblContactInfo: 'ژمارەی تلفۆن / تێلیگرام / سناپ *',
+                lblUserName: 'ناوی تەواو (ئارەزوومەندانە)',
+                lblDetails: 'وردەکاری کارەکە *',
+                btnSubmitReq: 'ناردنی داواکاری خێرا',
+                contactTitle: 'پەیوەندی ڕاستەوخۆ',
+                contactSub: 'بۆ هەر پرسیارێک یاخود داواکاری کۆد و سیستەم:'
+            }
+        };
+
+        function changeLanguage(langKey) {
+            const lang = translations[langKey] || translations.ar;
+            document.documentElement.dir = lang.dir;
+            document.documentElement.lang = langKey;
+
+            // Update UI elements
+            document.getElementById('txt-security-status').textContent = lang.secStatus;
+            document.getElementById('nav-converter').textContent = lang.navConv;
+            document.getElementById('nav-services').textContent = lang.navServ;
+            document.getElementById('nav-request').textContent = lang.navReq;
+            document.getElementById('nav-contact').textContent = lang.navContact;
+            document.getElementById('txt-zero-storage').textContent = lang.zeroStore;
+            document.getElementById('txt-hero-title').innerHTML = lang.heroTitle;
+            document.getElementById('txt-hero-desc').textContent = lang.heroDesc;
+            document.getElementById('txt-conv-head').textContent = lang.convHead;
+            document.getElementById('txt-conv-sub').textContent = lang.convSub;
+            
+            document.getElementById('lbl-w2p').textContent = lang.lblW2P;
+            document.getElementById('lbl-p2w').textContent = lang.lblP2W;
+            document.getElementById('lbl-p2ppt').textContent = lang.lblP2PPT;
+            document.getElementById('lbl-ppt2p').textContent = lang.lblPPT2P;
+            document.getElementById('lbl-w2ppt').textContent = lang.lblW2PPT;
+            document.getElementById('lbl-ppt2w').textContent = lang.lblPPT2W;
+
+            document.getElementById('txt-drop-main').textContent = lang.dropMain;
+            document.getElementById('txt-drop-sub').textContent = lang.dropSub;
+            document.getElementById('btn-browse').textContent = lang.btnBrowse;
+            document.getElementById('txt-client-proc').textContent = lang.clientProc;
+            document.getElementById('txt-convert-btn').textContent = lang.btnConvert;
+
+            document.getElementById('txt-serv-title').textContent = lang.servTitle;
+            document.getElementById('txt-serv-sub').textContent = lang.servSub;
+            
+            document.getElementById('srv1-title').textContent = lang.srv1Title;
+            document.getElementById('srv1-desc').textContent = lang.srv1Desc;
+            document.getElementById('srv2-title').textContent = lang.srv2Title;
+            document.getElementById('srv2-desc').textContent = lang.srv2Desc;
+            document.getElementById('srv3-title').textContent = lang.srv3Title;
+            document.getElementById('srv3-desc').textContent = lang.srv3Desc;
+            document.getElementById('srv4-title').textContent = lang.srv4Title;
+            document.getElementById('srv4-desc').textContent = lang.srv4Desc;
+            document.getElementById('srv5-title').textContent = lang.srv5Title;
+            document.getElementById('srv5-desc').textContent = lang.srv5Desc;
+            document.getElementById('srv6-title').textContent = lang.srv6Title;
+            document.getElementById('srv6-desc').textContent = lang.srv6Desc;
+            
+            document.getElementById('lbl-custom-price').textContent = lang.customPrice;
+
+            for(let i = 1; i <= 5; i++) {
+                document.getElementById('curr' + i).textContent = lang.curr;
+                document.getElementById('btn-order' + i).textContent = lang.btnOrder;
+            }
+            document.getElementById('btn-order6').textContent = lang.btnOrderSpecial;
+
+            document.getElementById('txt-form-head').textContent = lang.formHead;
+            document.getElementById('txt-form-sub').textContent = lang.formSub;
+            document.getElementById('lbl-sel-service').textContent = lang.lblSelService;
+            document.getElementById('lbl-contact-info').textContent = lang.lblContactInfo;
+            document.getElementById('lbl-user-name').textContent = lang.lblUserName;
+            document.getElementById('lbl-details').textContent = lang.lblDetails;
+            document.getElementById('btn-submit-req').textContent = lang.btnSubmitReq;
+            
+            document.getElementById('txt-contact-title').textContent = lang.contactTitle;
+            document.getElementById('txt-contact-sub').textContent = lang.contactSub;
+        }
+
+        // ----------------------------------------------------------------
+        // 2. CONVERTER & FILE SECURITY CHECK (Client-Side)
+        // ----------------------------------------------------------------
+        let activeConversion = { id: 'word-pdf', ext: '.doc,.docx', title: 'Word -> PDF', targetExt: '.pdf' };
+        let loadedFile = null;
+
+        const FORBIDDEN_EXTS = ['.exe', '.sh', '.php', '.js', '.bat', '.vbs', '.cmd', '.jar', '.scr', '.msi'];
+
+        function selectConversion(id, ext, title) {
+            activeConversion = {
+                id: id,
+                ext: ext,
+                title: title,
+                targetExt: id.endsWith('pdf') ? '.pdf' : (id.endsWith('word') ? '.docx' : '.pptx')
+            };
+
+            document.querySelectorAll('.opt-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('opt-' + id).classList.add('active');
+
+            document.getElementById('selectedOptionTitle').textContent = title;
+            document.getElementById('allowedExtText').textContent = 'الصيغ المسموحة: ' + ext;
+
+            resetFileState();
+        }
+
+        function handleFile(file) {
+            if (!file) return;
+
+            const name = file.name.toLowerCase();
+            
+            // Security check against dangerous executable files
+            for (let fExt of FORBIDDEN_EXTS) {
+                if (name.endsWith(fExt)) {
+                    showToast('⚠️ تحذير أمني: يمنع رفع الملفات البرمجية أو الخبيثة!', 'error');
+                    resetFileState();
+                    return;
+                }
+            }
+
+            // Extension compatibility check
+            const allowedList = activeConversion.ext.split(',').map(e => e.trim().toLowerCase());
+            const isValidExt = allowedList.some(e => name.endsWith(e));
+
+            if (!isValidExt) {
+                showToast(`صيغة الملف غير مطابقة! الصيغ المسموحة: ${activeConversion.ext}`, 'error');
+                resetFileState();
+                return;
+            }
+
+            loadedFile = file;
+            document.getElementById('fileNameDisplay').textContent = file.name;
+            document.getElementById('fileSizeDisplay').textContent = (file.size / 1024).toFixed(1) + ' KB';
+            document.getElementById('fileInfoArea').style.display = 'block';
+            
+            const btn = document.getElementById('btnConvert');
+            btn.disabled = false;
+        }
+
+        function resetFileState() {
+            loadedFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileInfoArea').style.display = 'none';
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('btnConvert').disabled = true;
+        }
+
+        function executeConversion() {
+            if (!loadedFile) return;
+
+            const pBar = document.getElementById('progressBar');
+            let progress = 0;
+
+            const interval = setInterval(() => {
+                progress += 25;
+                pBar.style.width = progress + '%';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    showToast('تم تحويل المستند بنجاح!', 'success');
+                    
+                    // Generate downloadable mock file safely in memory
+                    const baseName = loadedFile.name.substring(0, loadedFile.name.lastIndexOf('.'));
+                    const outputName = `${baseName}_converted${activeConversion.targetExt}`;
+
+                    const dummyBlob = new Blob([`تم تحويل هذا المستند بنجاح من خلال منصة دیار عبدالعزيز فريق.\nاسم الملف: ${loadedFile.name}`], { type: 'application/octet-stream' });
+                    const blobUrl = URL.createObjectURL(dummyBlob);
+
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = outputName;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(blobUrl);
+                }
+            }, 250);
+        }
+
+        // Drag and Drop Event Listeners
+        const dz = document.getElementById('dropzone');
+        dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('dragover'); });
+        dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+        dz.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dz.classList.remove('dragover');
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        // ----------------------------------------------------------------
+        // 3. SERVICE FORM SUBMISSION & XSS PROTECTION
+        // ----------------------------------------------------------------
+        function sanitizeInput(str) {
+            if (!str) return '';
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        function preselectService(serviceName) {
+            document.getElementById('reqServiceType').value = serviceName;
+            document.getElementById('request').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function submitServiceForm(e) {
+            e.preventDefault();
+
+            const serviceType = sanitizeInput(document.getElementById('reqServiceType').value);
+            const contact = sanitizeInput(document.getElementById('reqContact').value);
+            const name = sanitizeInput(document.getElementById('reqName').value) || 'غير محدد';
+            const details = sanitizeInput(document.getElementById('reqDetails').value);
+
+            const newReq = {
+                id: Date.now(),
+                serviceType,
+                contact,
+                name,
+                details,
+                date: new Date().toLocaleString()
+            };
+
+            const existing = JSON.parse(localStorage.getItem('diyar_requests') || '[]');
+            existing.unshift(newReq);
+            localStorage.setItem('diyar_requests', JSON.stringify(existing));
+
+            showToast('تم إرسال طلبك الآلي بنجاح!', 'success');
+            e.target.reset();
+        }
+
+        // ----------------------------------------------------------------
+        // 4. HIDDEN ADMIN ACCESS & BRUTE-FORCE LOCKOUT
+        // ----------------------------------------------------------------
+        const ADMIN_U = "admindiko";
+        const ADMIN_P = "admindiko0o@12345";
+        let failedLoginAttempts = 0;
+        let isLocked = false;
+
+        // Hidden Entry Method 1: Triple click on brand logo
+        let clickCount = 0;
+        let clickTimer = null;
+        document.getElementById('secretLogo').addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 1) {
+                clickTimer = setTimeout(() => { clickCount = 0; }, 1000);
+            } else if (clickCount === 3) {
+                clearTimeout(clickTimer);
+                clickCount = 0;
+                openAdminModal();
+            }
+        });
+
+        // Hidden Entry Method 2: Keyboard shortcut Ctrl + Shift + A
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+                e.preventDefault();
+                openAdminModal();
+            }
+        });
+
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.add('active');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('active');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            if (isLocked) return;
+
+            const u = document.getElementById('adminUser').value.trim();
+            const p = document.getElementById('adminPass').value;
+
+            if (u === ADMIN_U && p === ADMIN_P) {
+                failedLoginAttempts = 0;
+                document.getElementById('adminLoginBody').style.display = 'none';
+                document.getElementById('adminDashBody').style.display = 'block';
+                loadAdminDashboard();
+                showToast('مرحباً بك للأدمن admindiko', 'success');
+            } else {
+                failedLoginAttempts++;
+                showToast(`بيانات غير صحيحة! محاولة (${failedLoginAttempts}/3)`, 'error');
+
+                if (failedLoginAttempts >= 3) {
+                    lockoutAdmin();
+                }
+            }
+        }
+
+        function lockoutAdmin() {
+            isLocked = true;
+            let timerSec = 30;
+            const lockoutMsg = document.getElementById('lockoutMsg');
+            const secSpan = document.getElementById('lockoutSec');
+            const btn = document.getElementById('adminAuthBtn');
+
+            lockoutMsg.style.display = 'block';
+            btn.disabled = true;
+
+            const interval = setInterval(() => {
+                timerSec--;
+                secSpan.textContent = timerSec;
+
+                if (timerSec <= 0) {
+                    clearInterval(interval);
+                    isLocked = false;
+                    failedLoginAttempts = 0;
+                    lockoutMsg.style.display = 'none';
+                    btn.disabled = false;
+                }
+            }, 1000);
+        }
+
+        function adminLogout() {
+            document.getElementById('adminDashBody').style.display = 'none';
+            document.getElementById('adminLoginBody').style.display = 'block';
+            document.getElementById('adminUser').value = '';
+            document.getElementById('adminPass').value = '';
+            closeAdminModal();
+        }
+
+        function loadAdminDashboard() {
+            const container = document.getElementById('adminRequestsContainer');
+            const requests = JSON.parse(localStorage.getItem('diyar_requests') || '[]');
+
+            if (requests.length === 0) {
+                container.innerHTML = '<p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); padding: 20px;">لا توجد طلبات واردة حتى الآن.</p>';
+                return;
+            }
+
+            container.innerHTML = requests.map(r => `
+                <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md); font-size: 0.8rem;">
+                    <div style="display: flex; justify-content: space-between; font-weight: bold; color: var(--accent-cyan); margin-bottom: 4px;">
+                        <span>${r.serviceType}</span>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">${r.date}</span>
+                    </div>
+                    <div><strong>الاسم:</strong> ${r.name}</div>
+                    <div><strong>التواصل:</strong> <span style="color: var(--accent-green);">${r.contact}</span></div>
+                    <div style="margin-top: 6px; background: rgba(0,0,0,0.3); padding: 6px; border-radius: 4px; color: var(--text-muted);">${r.details}</div>
+                    <div style="text-align: left; margin-top: 6px;">
+                        <button onclick="removeReq(${r.id})" style="background: none; border: none; color: var(--accent-red); cursor: pointer; font-size: 0.75rem;">حذف الطلب</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function removeReq(id) {
+            let requests = JSON.parse(localStorage.getItem('diyar_requests') || '[]');
+            requests = requests.filter(r => r.id !== id);
+            localStorage.setItem('diyar_requests', JSON.stringify(requests));
+            loadAdminDashboard();
+        }
+
+        // ----------------------------------------------------------------
+        // 5. TOAST NOTIFICATION UTILITY
+        // ----------------------------------------------------------------
+        function showToast(msg, type = 'info') {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+
+            toastMsg.textContent = msg;
+
+            if (type === 'error') {
+                toast.style.borderColor = 'var(--accent-red)';
+            } else if (type === 'success') {
+                toast.style.borderColor = 'var(--accent-green)';
+            } else {
+                toast.style.borderColor = 'var(--primary)';
+            }
+
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
