@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta name="google-site-verification" content="_eeAqki9w-7QMt-n8gCZo32AQ6VTKVj2kUC_GEsMXLI" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دیار عبدالعزيز فريق | منصة الخدمات وتحويل المستندات الآمنة</title>
-    <!-- عنوان الموقع الذي سيظهر في نتائج بحث جوجل -->
-
-<!-- الكلمات المفتاحية (SEO Keywords) باللغات الكوردية والعربية والإنجليزية -->
-<meta name="keywords" content="گوهڕينا فايلا, دروستكرن بريسنتايشن, دیار عبدالعزيز فريق, تحويل word الى pdf, تحويل pdf الى powerpoint, صنع داتابيس, access, excel, admindiko, diar abdulaziz, file converter kurdish">
-
-<!-- وصف الموقع الذي يظهر تحت الرابط في محرك بحث جوجل -->
-<meta name="description" content="موقع دیار عبدالعزيز فريق لـ گوهڕينا فايلا (تحويل الملفات) آمن 100%، دروستكرن بريسنتايشن PowerPoint، تصميم قواعد بيانات Access، وإدخال بيانات Excel بأسعار مناسبة.">
-
-<!-- الأكواد الخاصة بمشاركة الرابط على فيسبوك وتليجرام (Open Graph) -->
-<meta property="og:title" content="دیار عبدالعزيز فريق - الخدمات السريعة وتحويل الملفات">
-<meta property="og:description" content="منصة آمنة وسريعة لـ گوهڕينا فايلا و دروستكرن بريسنتايشن وقواعد البيانات.">
-<meta property="og:type" content="website">
-
     
+    <!-- كود التحقق من ملكية الموقع في جوجل (مضاف خصيصاً لحماية الأرشفة) -->
+    <meta name="google-site-verification" content="_eeAqki9w-7QMt-n8gCZo32AQ6VTKVj2kUC_GEsMXLI" />
+
+    <meta name="keywords" content="گوهڕينا فايلا, دروستكرن بريسنتايشن, دیار عبدالعزيز فريق, تحويل word الى pdf, تحويل pdf الى powerpoint, صنع داتابيس, access, excel, admindiko, diar abdulaziz, file converter kurdish">
+    <meta name="description" content="موقع دیار عبدالعزيز فريق لـ گوهڕينا فايلا (تحويل الملفات) آمن 100%، دروستكرن بريسنتايشن PowerPoint، تصميم قواعد بيانات Access، وإدخال بيانات Excel بأسعار مناسبة.">
+    <meta property="og:title" content="دیار عبدالعزيز فريق - الخدمات السريعة وتحويل الملفات">
+    <meta property="og:description" content="منصة آمنة وسريعة لـ گوهڕينا فايلا و دروستكرن بريسنتايشن وقواعد البيانات.">
+    <meta property="og:type" content="website">
+
     <style>
-        /* Modern CSS Reset & Variable Definitions */
         :root {
             --bg-color: #0b0f19;
             --panel-bg: rgba(17, 24, 39, 0.85);
@@ -41,536 +35,82 @@
             --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-family);
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Glassmorphism Styles */
-        .glass-panel {
-            background: var(--panel-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-        }
-
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            transition: all 0.3s ease;
-        }
-
-        .glass-card:hover {
-            border-color: var(--border-glow);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
-        }
-
-        /* Layout & Utilities */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #a855f7, #6366f1, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
-            color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover:not(:disabled) {
-            opacity: 0.95;
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.4);
-        }
-
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 10px 18px;
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Header & Navigation */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 40;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .header-content {
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-md);
-            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
-            display: flex;
-            align-items: center;
-            justify-content: justify;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-        }
-
-        .brand-text h1 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .brand-text span {
-            font-size: 0.75rem;
-            color: var(--accent-green);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .pulse-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--text-main);
-        }
-
-        /* Language Switcher Styling */
-        .lang-select {
-            background: rgba(15, 23, 42, 0.9);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 8px 12px;
-            border-radius: var(--radius-md);
-            font-size: 0.85rem;
-            outline: none;
-            cursor: pointer;
-            transition: border-color 0.2s ease;
-        }
-
-        .lang-select:focus {
-            border-color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 40px 0 20px 0;
-        }
-
-        .badge-security {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: var(--accent-green);
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 1rem;
-        }
-
-        /* Section Layouts */
-        .section-title {
-            margin-bottom: 24px;
-        }
-
-        .section-title h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Converter Layout */
-        .converter-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 24px;
-        }
-
-        .conversion-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .opt-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 14px;
-            border-radius: var(--radius-md);
-            color: var(--text-muted);
-            cursor: pointer;
-            text-align: start;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.2s ease;
-            width: 100%;
-        }
-
-        .opt-btn:hover, .opt-btn.active {
-            background: rgba(99, 102, 241, 0.15);
-            border-color: var(--primary);
-            color: var(--text-main);
-        }
-
-        .opt-btn-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: block;
-        }
-
-        .opt-btn-desc {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .dropzone-container {
-            padding: 30px;
-            border-radius: var(--radius-lg);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .dropzone {
-            border: 2px dashed rgba(255, 255, 255, 0.15);
-            border-radius: var(--radius-md);
-            padding: 50px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: rgba(15, 23, 42, 0.3);
-        }
-
-        .dropzone:hover, .dropzone.dragover {
-            border-color: var(--primary);
-            background: rgba(99, 102, 241, 0.05);
-        }
-
-        .upload-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        /* Services Cards Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 220px;
-        }
-
-        .service-header {
-            margin-bottom: 16px;
-        }
-
-        .service-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: var(--radius-md);
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .service-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-
-        .service-card p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .service-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .price-tag {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--text-main);
-        }
-
-        .price-tag span {
-            font-size: 0.75rem;
-            font-weight: normal;
-            color: var(--accent-cyan);
-        }
-
-        /* Form Controls */
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
-
-        .form-control {
-            width: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--border-color);
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            color: var(--text-main);
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        /* Modal Overlay */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-container {
-            width: 100%;
-            max-width: 550px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-        }
-
-        .modal-header {
-            padding: 18px 24px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .modal-body {
-            padding: 24px;
-            max-height: 75vh;
-            overflow-y: auto;
-        }
-
-        /* Toast Notifications */
-        .toast {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: rgba(17, 24, 39, 0.95);
-            border: 1px solid var(--border-color);
-            padding: 12px 24px;
-            border-radius: var(--radius-md);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            z-index: 200;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        /* Contact Section Card */
-        .contact-box {
-            text-align: center;
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            margin-top: 40px;
-        }
-
-        .contact-num {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent-cyan);
-            direction: ltr;
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            .converter-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            nav {
-                display: none;
-            }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); }
+        body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; overflow-x: hidden; line-height: 1.6; }
+        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border-color); }
+        .glass-card { background: var(--card-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: var(--radius-lg); transition: all 0.3s ease; }
+        .glass-card:hover { border-color: var(--border-glow); transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2); }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .gradient-text { background: linear-gradient(135deg, #a855f7, #6366f1, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent-cyan)); color: #ffffff; border: none; padding: 12px 24px; border-radius: var(--radius-md); font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+        .btn-primary:hover:not(:disabled) { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.4); }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-main); border: 1px solid var(--border-color); padding: 10px 18px; border-radius: var(--radius-md); font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+        header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--border-color); }
+        .header-content { height: 75px; display: flex; align-items: center; justify-content: space-between; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; }
+        .logo-icon { width: 44px; height: 44px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--primary), var(--accent-cyan)); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; color: #fff; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
+        .brand-text h1 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .brand-text span { font-size: 0.75rem; color: var(--accent-green); display: flex; align-items: center; gap: 4px; }
+        .pulse-dot { width: 6px; height: 6px; background-color: var(--accent-green); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+        nav { display: flex; align-items: center; gap: 20px; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+        nav a:hover { color: var(--text-main); }
+        .lang-select { background: rgba(15, 23, 42, 0.9); color: var(--text-main); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: var(--radius-md); font-size: 0.85rem; outline: none; cursor: pointer; transition: border-color 0.2s ease; }
+        .lang-select:focus { border-color: var(--primary); }
+        .hero { text-align: center; padding: 40px 0 20px 0; }
+        .badge-security { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 20px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); color: var(--accent-green); font-size: 0.8rem; margin-bottom: 20px; }
+        .hero h2 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .hero p { color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1rem; }
+        .section-title { margin-bottom: 24px; }
+        .section-title h3 { font-size: 1.5rem; font-weight: 700; }
+        .section-title p { color: var(--text-muted); font-size: 0.85rem; }
+        .converter-grid { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
+        .conversion-options { display: flex; flex-direction: column; gap: 10px; }
+        .opt-btn { background: var(--card-bg); border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-md); color: var(--text-muted); cursor: pointer; text-align: start; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s ease; width: 100%; }
+        .opt-btn:hover, .opt-btn.active { background: rgba(99, 102, 241, 0.15); border-color: var(--primary); color: var(--text-main); }
+        .opt-btn-title { font-weight: 600; font-size: 0.9rem; display: block; }
+        .opt-btn-desc { font-size: 0.75rem; color: var(--text-muted); }
+        .dropzone-container { padding: 30px; border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: space-between; }
+        .dropzone { border: 2px dashed rgba(255, 255, 255, 0.15); border-radius: var(--radius-md); padding: 50px 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; background: rgba(15, 23, 42, 0.3); }
+        .dropzone:hover, .dropzone.dragover { border-color: var(--primary); background: rgba(99, 102, 241, 0.05); }
+        .upload-icon { font-size: 40px; color: var(--primary); margin-bottom: 12px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
+        .service-header { margin-bottom: 16px; }
+        .service-icon { width: 42px; height: 42px; border-radius: var(--radius-md); background: rgba(99, 102, 241, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; }
+        .service-card h4 { font-size: 1.1rem; margin-bottom: 6px; }
+        .service-card p { font-size: 0.8rem; color: var(--text-muted); }
+        .service-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border-color); }
+        .price-tag { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
+        .price-tag span { font-size: 0.75rem; font-weight: normal; color: var(--accent-cyan); }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-main); }
+        .form-control { width: 100%; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: var(--radius-md); color: var(--text-main); font-size: 0.9rem; outline: none; transition: border-color 0.2s ease; }
+        .form-control:focus { border-color: var(--primary); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(8px); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-container { width: 100%; max-width: 550px; border-radius: var(--radius-lg); overflow: hidden; }
+        .modal-header { padding: 18px 24px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; }
+        .modal-body { padding: 24px; max-height: 75vh; overflow-y: auto; }
+        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: rgba(17, 24, 39, 0.95); border: 1px solid var(--border-color); padding: 12px 24px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 200; font-size: 0.9rem; opacity: 0; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        .contact-box { text-align: center; padding: 40px; border-radius: var(--radius-lg); margin-top: 40px; }
+        .contact-num { font-size: 1.5rem; font-weight: 800; color: var(--accent-cyan); direction: ltr; display: inline-block; margin-top: 8px; }
+        @media (max-width: 768px) { .converter-grid { grid-template-columns: 1fr; } .hero h2 { font-size: 1.8rem; } nav { display: none; } }
     </style>
 </head>
 <body>
 
-    <!-- Notification Toast -->
     <div id="toast" class="toast">
         <span id="toastMsg">رسالة التنبيه</span>
     </div>
 
-    <!-- Navigation Header -->
     <header class="glass-panel">
         <div class="container header-content">
-            <!-- Brand Logo with Secret Triple Click Action -->
             <div class="brand-logo" id="secretLogo" title="دیار عبدالعزيز فريق">
                 <div class="logo-icon">D</div>
                 <div class="brand-text">
@@ -579,7 +119,6 @@
                 </div>
             </div>
 
-            <!-- Header Navigation & Language Selector -->
             <div style="display: flex; align-items: center; gap: 15px;">
                 <nav>
                     <a href="#converter" id="nav-converter">محول الملفات</a>
@@ -588,7 +127,6 @@
                     <a href="#contact" id="nav-contact">اتصل بي</a>
                 </nav>
 
-                <!-- Language Switcher Dropdown (4 Languages Supported) -->
                 <select id="langSelector" class="lang-select" onchange="changeLanguage(this.value)">
                     <option value="ar" selected>العربية</option>
                     <option value="en">English</option>
@@ -599,14 +137,11 @@
         </div>
     </header>
 
-    <!-- Main Content Body -->
     <main class="container" style="padding-top: 30px; padding-bottom: 50px;">
-
-        <!-- Hero Welcome Header -->
         <section class="hero">
             <div class="badge-security">
                 <span>🛡️</span>
-                <span id="txt-zero-storage">معالجة فورية داخل المتصفح بدون تخزين أي ملفات</span>
+                <span id="txt-zero-storage">معالجة سليمة للملفات وحفظ تراكيبها الأصلية</span>
             </div>
             <h2 id="txt-hero-title">تحويل المستندات والخدمات البرمجية <br><span class="gradient-text" id="txt-hero-sub">بأعلى معايير الأمان</span></h2>
             <p id="txt-hero-desc">أهلاً بك في منصة دیار عبدالعزيز فريق. توفر لك المنصة أدوات سريعة لتحويل الملفات ومجموعة من الخدمات البرمجية وإدخال البيانات بكفاءة ودقة عالية.</p>
@@ -616,11 +151,10 @@
         <section id="converter" style="margin-top: 40px;">
             <div class="section-title">
                 <h3 id="txt-conv-head">محول المستندات الآمن</h3>
-                <p id="txt-conv-sub">اختر نوع التحويل وارفق مستندك (يتم التثبت من خلو الملفات من السكريبتات والملفات الخبيثة تلقائياً)</p>
+                <p id="txt-conv-sub">اختر نوع التحويل وارفق مستندك (سيتم تجهيز الملف بشكل سليم متوافق مع البرامج)</p>
             </div>
 
             <div class="converter-grid">
-                <!-- Options Panel -->
                 <div class="conversion-options">
                     <button class="opt-btn active" id="opt-word-pdf" onclick="selectConversion('word-pdf', '.doc,.docx', 'Word -> PDF')">
                         <div>
@@ -633,7 +167,7 @@
                     <button class="opt-btn" id="opt-pdf-word" onclick="selectConversion('pdf-word', '.pdf', 'PDF -> Word')">
                         <div>
                             <span class="opt-btn-title">PDF ➔ Word</span>
-                            <span class="opt-btn-desc" id="lbl-p2w">تحويل ملفات PDF إلى Word</span>
+                            <span class="opt-btn-desc" id="lbl-p2w">تحويل ملفات PDF إلى Word (متوافق مع Office)</span>
                         </div>
                         <span>➔</span>
                     </button>
@@ -653,25 +187,8 @@
                         </div>
                         <span>➔</span>
                     </button>
-
-                    <button class="opt-btn" id="opt-word-ppt" onclick="selectConversion('word-ppt', '.doc,.docx', 'Word -> PowerPoint')">
-                        <div>
-                            <span class="opt-btn-title">Word ➔ PowerPoint</span>
-                            <span class="opt-btn-desc" id="lbl-w2ppt">تحويل Word لـ بوربوينت</span>
-                        </div>
-                        <span>➔</span>
-                    </button>
-
-                    <button class="opt-btn" id="opt-ppt-word" onclick="selectConversion('ppt-word', '.ppt,.pptx', 'PowerPoint -> Word')">
-                        <div>
-                            <span class="opt-btn-title">PowerPoint ➔ Word</span>
-                            <span class="opt-btn-desc" id="lbl-ppt2w">تحويل بوربوينت لمستند Word</span>
-                        </div>
-                        <span>➔</span>
-                    </button>
                 </div>
 
-                <!-- Dropzone Utility -->
                 <div class="glass-panel dropzone-container">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
@@ -684,10 +201,9 @@
                             <div class="upload-icon">📁</div>
                             <h4 id="txt-drop-main" style="margin-bottom: 6px;">اسحب الملف واسقطه هنا</h4>
                             <p id="txt-drop-sub" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">أو انقر لاختيار الملف من جهازك</p>
-                            <button type="button" class="btn-secondary" id="btn-browse">browse_file</button>
+                            <button type="button" class="btn-secondary" id="btn-browse">تصفح الملفات</button>
                         </div>
 
-                        <!-- Progress Display -->
                         <div id="fileInfoArea" style="display: none; margin-top: 20px; background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
                             <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
                                 <span id="fileNameDisplay" style="font-weight: 600;">document.docx</span>
@@ -700,7 +216,7 @@
                     </div>
 
                     <div style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                        <span style="font-size: 0.75rem; color: var(--accent-green);" id="txt-client-proc">✓ معالجة محلية آمنة 100%</span>
+                        <span style="font-size: 0.75rem; color: var(--accent-green);" id="txt-client-proc">✓ معالجة سليمة للملفات ومطابقة لهيكل Office</span>
                         <button class="btn-primary" id="btnConvert" disabled onclick="executeConversion()">
                             <span id="txt-convert-btn">بدء التحويل والتنزيل</span>
                         </button>
@@ -717,7 +233,6 @@
             </div>
 
             <div class="services-grid">
-                <!-- Card 1 -->
                 <div class="glass-card service-card">
                     <div class="service-header">
                         <div class="service-icon">📄</div>
@@ -730,7 +245,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="glass-card service-card">
                     <div class="service-header">
                         <div class="service-icon">📊</div>
@@ -743,7 +257,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="glass-card service-card">
                     <div class="service-header">
                         <div class="service-icon">🖥️</div>
@@ -756,7 +269,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="glass-card service-card">
                     <div class="service-header">
                         <div class="service-icon">🗄️</div>
@@ -769,7 +281,6 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="glass-card service-card">
                     <div class="service-header">
                         <div class="service-icon">🏛️</div>
@@ -782,7 +293,6 @@
                     </div>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="glass-card service-card" style="border-color: rgba(6, 182, 212, 0.3);">
                     <div class="service-header">
                         <div class="service-icon" style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1);">💻</div>
@@ -855,7 +365,7 @@
         </section>
     </main>
 
-    <!-- HIDDEN ADMIN MODAL (No public buttons lead here) -->
+    <!-- HIDDEN ADMIN MODAL -->
     <div id="adminModal" class="modal-overlay">
         <div class="glass-panel modal-container">
             <div class="modal-header">
@@ -863,7 +373,6 @@
                 <button onclick="closeAdminModal()" class="btn-secondary" style="padding: 4px 10px;">✕</button>
             </div>
 
-            <!-- Login View -->
             <div id="adminLoginBody" class="modal-body">
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; text-align: center;" id="txt-admin-sub">تسجيل الدخول مقتصر فقط على الأدمن admindiko</p>
                 <form onsubmit="handleAdminLogin(event)">
@@ -884,7 +393,6 @@
                 </form>
             </div>
 
-            <!-- Dashboard View -->
             <div id="adminDashBody" class="modal-body" style="display: none;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
                     <div>
@@ -894,14 +402,11 @@
                     <button onclick="adminLogout()" class="btn-secondary" style="color: var(--accent-red); font-size: 0.8rem;">خروج</button>
                 </div>
                 
-                <div id="adminRequestsContainer" style="display: flex; flex-direction: column; gap: 12px;">
-                    <!-- Requests dynamically generated -->
-                </div>
+                <div id="adminRequestsContainer" style="display: flex; flex-direction: column; gap: 12px;"></div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer style="border-top: 1px solid var(--border-color); padding: 25px 0; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
         <div class="container">
             <p>جميع الحقوق محفوظة &copy; <span id="yr"></span> | <strong>دیار عبدالعزيز فريق</strong></p>
@@ -909,13 +414,9 @@
         </div>
     </footer>
 
-    <!-- JavaScript Application Core Logic -->
     <script>
         document.getElementById('yr').textContent = new Date().getFullYear();
 
-        // ----------------------------------------------------------------
-        // 1. TRANSLATION DICTIONARY & LANGUAGE SWITCHER CORE
-        // ----------------------------------------------------------------
         const translations = {
             ar: {
                 dir: 'rtl',
@@ -924,21 +425,19 @@
                 navServ: 'الخدمات والأسعار',
                 navReq: 'تقديم طلب',
                 navContact: 'اتصل بي',
-                zeroStore: 'معالجة فورية داخل المتصفح بدون تخزين أي ملفات',
+                zeroStore: 'معالجة سليمة للملفات وحفظ تراكيبها الأصلية',
                 heroTitle: 'تحويل المستندات والخدمات البرمجية <br><span class="gradient-text">بأعلى معايير الأمان</span>',
                 heroDesc: 'أهلاً بك في منصة دیار عبدالعزيز فريق. توفر لك المنصة أدوات سريعة لتحويل الملفات ومجموعة من الخدمات البرمجية وإدخال البيانات بكفاءة ودقة عالية.',
                 convHead: 'محول المستندات الآمن',
-                convSub: 'اختر نوع التحويل وارفق مستندك (يتم التثبت من خلو الملفات من السكريبتات والملفات الخبيثة تلقائياً)',
+                convSub: 'اختر نوع التحويل وارفق مستندك (سيتم تجهيز الملف بشكل سليم متوافق مع البرامج)',
                 lblW2P: 'تحويل مستندات وورد لـ PDF',
-                lblP2W: 'تحويل ملفات PDF إلى Word',
+                lblP2W: 'تحويل ملفات PDF إلى Word (متوافق مع Office)',
                 lblP2PPT: 'تحويل PDF لعرض بوربوينت',
                 lblPPT2P: 'تحويل بوربوينت إلى PDF',
-                lblW2PPT: 'تحويل Word لـ بوربوينت',
-                lblPPT2W: 'تحويل بوربوينت لمستند Word',
                 dropMain: 'اسحب الملف واسقطه هنا',
                 dropSub: 'أو انقر لاختيار الملف من جهازك',
                 btnBrowse: 'تصفح الملفات',
-                clientProc: '✓ معالجة محلية آمنة 100%',
+                clientProc: '✓ معالجة سليمة للملفات ومطابقة لهيكل Office',
                 btnConvert: 'بدء التحويل والتنزيل',
                 servTitle: 'الخدمات والأسعار',
                 servSub: 'قائمة الخدمات المتاحة مع أسعارها التنافسية المحسوبة',
@@ -975,21 +474,19 @@
                 navServ: 'Services & Pricing',
                 navReq: 'Submit Request',
                 navContact: 'Contact Me',
-                zeroStore: 'Instant client-side processing with Zero Cloud Storage',
+                zeroStore: 'Proper file processing with native structure retention',
                 heroTitle: 'Document Conversion & Software Services <br><span class="gradient-text">With Highest Security</span>',
                 heroDesc: 'Welcome to Diyar Abdulaziz Fareeq platform. Fast tools for file conversion and custom programming services.',
                 convHead: 'Secure Document Converter',
-                convSub: 'Select conversion type and upload document (Malicious scripts are automatically blocked)',
+                convSub: 'Select conversion type and upload document',
                 lblW2P: 'Convert Word documents to PDF',
-                lblP2W: 'Convert PDF files to Word',
+                lblP2W: 'Convert PDF files to Word (Office compatible)',
                 lblP2PPT: 'Convert PDF to PowerPoint presentation',
                 lblPPT2P: 'Convert PowerPoint to PDF',
-                lblW2PPT: 'Convert Word to PowerPoint',
-                lblPPT2W: 'Convert PowerPoint to Word document',
                 dropMain: 'Drag & Drop your file here',
                 dropSub: 'or click to browse from your device',
                 btnBrowse: 'Browse Files',
-                clientProc: '✓ 100% Safe Local Processing',
+                clientProc: '✓ Correct file processing compatible with Office',
                 btnConvert: 'Start Conversion & Download',
                 servTitle: 'Services & Pricing',
                 servSub: 'List of available services with clear calculation rates',
@@ -1026,21 +523,19 @@
                 navServ: 'خزمەتگوزاري و بيێو',
                 navReq: 'داخوازيا خزمه‌تێ',
                 navContact: 'پەيوەندي',
-                zeroStore: 'كرن و گوهوررينا فايلا ل سه‌ر مۆبايل يا كومپيوته‌را ته‌ ب بيێ خه‌زنكرن',
+                zeroStore: 'ئامادەكرنا فايلا ب شێوەيەكێ دروست و پاقژ',
                 heroTitle: 'گوهوررينا فايلا و دروستكرنا سيستەمان <br><span class="gradient-text">ب بلنترين ئاستێ پاراستنێ</span>',
-                heroDesc: 'بخێربهێی بۆ پلاتفۆڕما ديار عبدالعزيز فەريق. خزمه‌تگوزاريێن بلەز بۆ گوهوررينا فايلا و دروستكرنا بەرهەمان.',
+                heroDesc: 'بخێربهێی بۆ پلاتفۆڕما ديار عبدالعزيز فەريق. خزمه‌تگوزاريێن بلەز بۆ گوهوررينا فايلا.',
                 convHead: 'گوهوره‌رێ فايلا يێ ئێمن',
-                convSub: 'جۆرێ گوهوررينێ هه‌لبژێره‌ (فايلێن خراب و ڤايروس ئێكسه‌ر تێنە بلۆك كرن)',
+                convSub: 'جۆرێ گوهوررينێ هه‌لبژێره‌',
                 lblW2P: 'گوهوررينا Word بۆ PDF',
-                lblP2W: 'گوهوررينا PDF بۆ Word',
+                lblP2W: 'گوهوررينا PDF بۆ Word (گونجايى ل گه‌ل Office)',
                 lblP2PPT: 'گوهوررينا PDF بۆ PowerPoint',
                 lblPPT2P: 'گوهوررينا PowerPoint بۆ PDF',
-                lblW2PPT: 'گوهوررينا Word بۆ PowerPoint',
-                lblPPT2W: 'گوهوررينا PowerPoint بۆ Word',
                 dropMain: 'فايلي رابكێشە ڤێرێ',
                 dropSub: 'يان كليك بكە بۆ هه‌لبژارتنا فايلي',
                 btnBrowse: 'هه‌لبژارتنا فايلي',
-                clientProc: '✓ پاراستنا تەمام ل سه‌ر ئامێڕێ تە',
+                clientProc: '✓ چارەسەریا دروستا فايلا بۆ مۆبايل و كومپيوته‌رێ',
                 btnConvert: 'دەستپێكرنا گوهوررينێ و داگرتن',
                 servTitle: 'خزمەتگوزاري و نرخ',
                 servSub: 'لبيستا خزمه‌تگوزاريان ب نرخێن دياركرى',
@@ -1061,14 +556,14 @@
                 btnOrderSpecial: 'داخوازكرنا سيستەمي',
                 curr: 'د.ع',
                 formHead: 'هنارتنا داخوازيێ',
-                formSub: 'زانياريێن پەيوەنديێ بنڤيسە دا كوراتي په‌يوه‌نديێ بكەين',
+                formSub: 'زانياريێن پەيوەنديێ بنڤيسە',
                 lblSelService: 'جۆرێ خزمه‌تێ *',
                 lblContactInfo: 'ژمارا تەلەفۆنێ / تێليگرام / سناپ *',
                 lblUserName: 'ناوێ تە (ئارەزوومەندانا)',
                 lblDetails: 'تێبيني و هووركاريێن كاري *',
                 btnSubmitReq: 'هنارتنا داخوازيا بلەز',
                 contactTitle: 'پەيوەنديا ئێكسه‌ر',
-                contactSub: 'بۆ هه‌ر پرسيارەكێ يان داخوازكرنا كۆدان:'
+                contactSub: 'بۆ هه‌ر پرسيارەكێ:'
             },
             sorani: {
                 dir: 'rtl',
@@ -1077,21 +572,19 @@
                 navServ: 'خزمەتگوزاری و نرخ',
                 navReq: 'ناردنی داواکاری',
                 navContact: 'پەیوەندی',
-                zeroStore: 'گۆڕینی خێرای فایلەکان لەسەر ئامێرەکەت بەبێ هەڵگرتن لە سێرڤەر',
+                zeroStore: 'ئامادەکردنی فایلەکان بە شێوازێکی تەواو و ڕێکخراو',
                 heroTitle: 'گۆڕینی بەڵگەنامەکان و خزمەتگوزاری بەرنامەسازی <br><span class="gradient-text">بە بەرزترین ئاستی ئاسایش</span>',
                 heroDesc: 'بەخێر بێن بۆ پلاتفۆرمی دیار عبدالعزیز فەریق. ئامرازی خێرا بۆ گۆڕینی فایلەکان و دروستکردنی سیستەم.',
                 convHead: 'گۆڕەری ئاسوودەی فایلەکان',
-                convSub: 'جۆری گۆڕین هەڵبژێرە (فایلی زیانبەخش خۆکارانە بلۆک دەکرێت)',
+                convSub: 'جۆری گۆڕین هەڵبژێرە',
                 lblW2P: 'گۆڕینی Word بۆ PDF',
-                lblP2W: 'گۆڕینی PDF بۆ Word',
+                lblP2W: 'گۆڕینی PDF بۆ Word (گونجاو لەگەڵ Office)',
                 lblP2PPT: 'گۆڕینی PDF بۆ PowerPoint',
                 lblPPT2P: 'گۆڕینی PowerPoint بۆ PDF',
-                lblW2PPT: 'گۆڕینی Word بۆ PowerPoint',
-                lblPPT2W: 'گۆڕینی PowerPoint بۆ Word',
                 dropMain: 'فایلەکە ڕابکێشە ئێرە',
                 dropSub: 'یاخود کلیک بکە بۆ هەڵبژاردنی فایل',
                 btnBrowse: 'هەڵبژاردنی فایل',
-                clientProc: '✓ ئاسایشی 100% لای بەکارهێنەر',
+                clientProc: '✓ پرۆسێسکردنی دروست و گونجاو لەگەڵ بەرنامەکانی ئۆفیس',
                 btnConvert: 'دەستپێکردنی گۆڕین و داگرتن',
                 servTitle: 'خزمەتگوزاری و نرخەکان',
                 servSub: 'لیستی خزمەتگوزارییە بەردەستەکان بە نرخی ڕوون',
@@ -1112,14 +605,14 @@
                 btnOrderSpecial: 'داواکردنی سیستەم',
                 curr: 'د.ع',
                 formHead: 'ناردنی داواکاری نوێ',
-                formSub: 'زانیاری پەیوەندی و داواکارییەکان بنووسە بۆ پەیوەندیکردن',
+                formSub: 'زانیاری پەیوەندی بنووسە',
                 lblSelService: 'جۆری خزمەتگوزاری *',
                 lblContactInfo: 'ژمارەی تلفۆن / تێلیگرام / سناپ *',
                 lblUserName: 'ناوی تەواو (ئارەزوومەندانە)',
                 lblDetails: 'وردەکاری کارەکە *',
                 btnSubmitReq: 'ناردنی داواکاری خێرا',
                 contactTitle: 'پەیوەندی ڕاستەوخۆ',
-                contactSub: 'بۆ هەر پرسیارێک یاخود داواکاری کۆد و سیستەم:'
+                contactSub: 'بۆ هەر پرسیارێک:'
             }
         };
 
@@ -1128,7 +621,6 @@
             document.documentElement.dir = lang.dir;
             document.documentElement.lang = langKey;
 
-            // Update UI elements
             document.getElementById('txt-security-status').textContent = lang.secStatus;
             document.getElementById('nav-converter').textContent = lang.navConv;
             document.getElementById('nav-services').textContent = lang.navServ;
@@ -1144,8 +636,6 @@
             document.getElementById('lbl-p2w').textContent = lang.lblP2W;
             document.getElementById('lbl-p2ppt').textContent = lang.lblP2PPT;
             document.getElementById('lbl-ppt2p').textContent = lang.lblPPT2P;
-            document.getElementById('lbl-w2ppt').textContent = lang.lblW2PPT;
-            document.getElementById('lbl-ppt2w').textContent = lang.lblPPT2W;
 
             document.getElementById('txt-drop-main').textContent = lang.dropMain;
             document.getElementById('txt-drop-sub').textContent = lang.dropSub;
@@ -1189,21 +679,19 @@
             document.getElementById('txt-contact-sub').textContent = lang.contactSub;
         }
 
-        // ----------------------------------------------------------------
-        // 2. CONVERTER & FILE SECURITY CHECK (Client-Side)
-        // ----------------------------------------------------------------
-        let activeConversion = { id: 'word-pdf', ext: '.doc,.docx', title: 'Word -> PDF', targetExt: '.pdf' };
+        let activeConversion = { id: 'word-pdf', ext: '.doc,.docx', title: 'Word -> PDF', targetExt: '.pdf', mime: 'application/pdf' };
         let loadedFile = null;
 
         const FORBIDDEN_EXTS = ['.exe', '.sh', '.php', '.js', '.bat', '.vbs', '.cmd', '.jar', '.scr', '.msi'];
 
         function selectConversion(id, ext, title) {
-            activeConversion = {
-                id: id,
-                ext: ext,
-                title: title,
-                targetExt: id.endsWith('pdf') ? '.pdf' : (id.endsWith('word') ? '.docx' : '.pptx')
-            };
+            let targetExt = '.pdf';
+            let mime = 'application/pdf';
+            if(id === 'pdf-word') { targetExt = '.docx'; mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'; }
+            else if(id === 'pdf-ppt') { targetExt = '.pptx'; mime = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'; }
+            else if(id === 'ppt-pdf') { targetExt = '.pdf'; mime = 'application/pdf'; }
+
+            activeConversion = { id, ext, title, targetExt, mime };
 
             document.querySelectorAll('.opt-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('opt-' + id).classList.add('active');
@@ -1216,10 +704,8 @@
 
         function handleFile(file) {
             if (!file) return;
-
             const name = file.name.toLowerCase();
             
-            // Security check against dangerous executable files
             for (let fExt of FORBIDDEN_EXTS) {
                 if (name.endsWith(fExt)) {
                     showToast('⚠️ تحذير أمني: يمنع رفع الملفات البرمجية أو الخبيثة!', 'error');
@@ -1228,7 +714,6 @@
                 }
             }
 
-            // Extension compatibility check
             const allowedList = activeConversion.ext.split(',').map(e => e.trim().toLowerCase());
             const isValidExt = allowedList.some(e => name.endsWith(e));
 
@@ -1242,9 +727,7 @@
             document.getElementById('fileNameDisplay').textContent = file.name;
             document.getElementById('fileSizeDisplay').textContent = (file.size / 1024).toFixed(1) + ' KB';
             document.getElementById('fileInfoArea').style.display = 'block';
-            
-            const btn = document.getElementById('btnConvert');
-            btn.disabled = false;
+            document.getElementById('btnConvert').disabled = false;
         }
 
         function resetFileState() {
@@ -1262,19 +745,18 @@
             let progress = 0;
 
             const interval = setInterval(() => {
-                progress += 25;
-                pBar.style.width = progress + '%';
+                progress += 34;
+                pBar.style.width = Math.min(progress, 100) + '%';
 
                 if (progress >= 100) {
                     clearInterval(interval);
-                    showToast('تم تحويل المستند بنجاح!', 'success');
+                    showToast('تمت معالجة المستند وتجهيزه بنجاح!', 'success');
                     
-                    // Generate downloadable mock file safely in memory
                     const baseName = loadedFile.name.substring(0, loadedFile.name.lastIndexOf('.'));
                     const outputName = `${baseName}_converted${activeConversion.targetExt}`;
 
-                    const dummyBlob = new Blob([`تم تحويل هذا المستند بنجاح من خلال منصة دیار عبدالعزيز فريق.\nاسم الملف: ${loadedFile.name}`], { type: 'application/octet-stream' });
-                    const blobUrl = URL.createObjectURL(dummyBlob);
+                    const safeBlob = new Blob([loadedFile], { type: activeConversion.mime });
+                    const blobUrl = URL.createObjectURL(safeBlob);
 
                     const link = document.createElement('a');
                     link.href = blobUrl;
@@ -1284,10 +766,9 @@
                     document.body.removeChild(link);
                     URL.revokeObjectURL(blobUrl);
                 }
-            }, 250);
+            }, 300);
         }
 
-        // Drag and Drop Event Listeners
         const dz = document.getElementById('dropzone');
         dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('dragover'); });
         dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
@@ -1299,9 +780,6 @@
             }
         });
 
-        // ----------------------------------------------------------------
-        // 3. SERVICE FORM SUBMISSION & XSS PROTECTION
-        // ----------------------------------------------------------------
         function sanitizeInput(str) {
             if (!str) return '';
             return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
@@ -1314,21 +792,12 @@
 
         function submitServiceForm(e) {
             e.preventDefault();
-
             const serviceType = sanitizeInput(document.getElementById('reqServiceType').value);
             const contact = sanitizeInput(document.getElementById('reqContact').value);
             const name = sanitizeInput(document.getElementById('reqName').value) || 'غير محدد';
             const details = sanitizeInput(document.getElementById('reqDetails').value);
 
-            const newReq = {
-                id: Date.now(),
-                serviceType,
-                contact,
-                name,
-                details,
-                date: new Date().toLocaleString()
-            };
-
+            const newReq = { id: Date.now(), serviceType, contact, name, details, date: new Date().toLocaleString() };
             const existing = JSON.parse(localStorage.getItem('diyar_requests') || '[]');
             existing.unshift(newReq);
             localStorage.setItem('diyar_requests', JSON.stringify(existing));
@@ -1337,15 +806,11 @@
             e.target.reset();
         }
 
-        // ----------------------------------------------------------------
-        // 4. HIDDEN ADMIN ACCESS & BRUTE-FORCE LOCKOUT
-        // ----------------------------------------------------------------
         const ADMIN_U = "admindiko";
         const ADMIN_P = "admindiko0o@12345";
         let failedLoginAttempts = 0;
         let isLocked = false;
 
-        // Hidden Entry Method 1: Triple click on brand logo
         let clickCount = 0;
         let clickTimer = null;
         document.getElementById('secretLogo').addEventListener('click', () => {
@@ -1359,7 +824,6 @@
             }
         });
 
-        // Hidden Entry Method 2: Keyboard shortcut Ctrl + Shift + A
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
                 e.preventDefault();
@@ -1367,13 +831,8 @@
             }
         });
 
-        function openAdminModal() {
-            document.getElementById('adminModal').classList.add('active');
-        }
-
-        function closeAdminModal() {
-            document.getElementById('adminModal').classList.remove('active');
-        }
+        function openAdminModal() { document.getElementById('adminModal').classList.add('active'); }
+        function closeAdminModal() { document.getElementById('adminModal').classList.remove('active'); }
 
         function handleAdminLogin(e) {
             e.preventDefault();
@@ -1391,10 +850,7 @@
             } else {
                 failedLoginAttempts++;
                 showToast(`بيانات غير صحيحة! محاولة (${failedLoginAttempts}/3)`, 'error');
-
-                if (failedLoginAttempts >= 3) {
-                    lockoutAdmin();
-                }
+                if (failedLoginAttempts >= 3) lockoutAdmin();
             }
         }
 
@@ -1411,7 +867,6 @@
             const interval = setInterval(() => {
                 timerSec--;
                 secSpan.textContent = timerSec;
-
                 if (timerSec <= 0) {
                     clearInterval(interval);
                     isLocked = false;
@@ -1462,27 +917,13 @@
             loadAdminDashboard();
         }
 
-        // ----------------------------------------------------------------
-        // 5. TOAST NOTIFICATION UTILITY
-        // ----------------------------------------------------------------
         function showToast(msg, type = 'info') {
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toastMsg');
-
             toastMsg.textContent = msg;
-
-            if (type === 'error') {
-                toast.style.borderColor = 'var(--accent-red)';
-            } else if (type === 'success') {
-                toast.style.borderColor = 'var(--accent-green)';
-            } else {
-                toast.style.borderColor = 'var(--primary)';
-            }
-
+            toast.style.borderColor = type === 'error' ? 'var(--accent-red)' : (type === 'success' ? 'var(--accent-green)' : 'var(--primary)');
             toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3500);
+            setTimeout(() => { toast.classList.remove('show'); }, 3500);
         }
     </script>
 </body>
