@@ -8,11 +8,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libreoffice-calc \
     fonts-liberation \
     fonts-noto \
-    fonts-noto-core \
-    fonts-noto-extra \
     fonts-kacst \
     fonts-hosny-amiri \
-    fonts-sil-scheherazade \
     && rm -rf /var/lib/apt/lists/*
 
 # 3. إنشاء مجلد العمل
