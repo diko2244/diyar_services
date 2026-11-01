@@ -6,11 +6,20 @@ from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
+# استيراد مكتبات التحويل
 try:
     from pdf2docx import Converter
     HAS_PDF2DOCX = True
 except ImportError:
     HAS_PDF2DOCX = False
+
+try:
+    from pdf2image import convert_from_path
+    from pptx import Presentation
+    from pptx.util import Inches
+    HAS_PDF2PPT = True
+except ImportError:
+    HAS_PDF2PPT = False
 
 app = Flask(__name__)
 CORS(app)
@@ -83,12 +92,25 @@ def convert():
             output_path = os.path.join(job_dir, "output.docx")
             cv = Converter(input_path); cv.convert(output_path); cv.close()
         
+        # التعديل الجديد: تحويل PDF إلى PowerPoint كصور
         elif original_ext == 'pdf' and target_format == 'pptx':
-            if not HAS_PDF2DOCX:
-                return jsonify({"error": "pdf2docx غير متاح"}), 500
-            docx_path = os.path.join(job_dir, 'intermediate.docx')
-            cv = Converter(input_path); cv.convert(docx_path); cv.close()
-            output_path = run_libreoffice(docx_path, 'pptx', job_dir)
+            if not HAS_PDF2PPT:
+                return jsonify({"error": "مكتبات pdf2image أو python-pptx غير متاحة"}), 500
+            
+            # تحويل كل صفحة PDF إلى صورة
+            images = convert_from_path(input_path)
+            prs = Presentation()
+            blank_slide_layout = prs.slide_layouts[6]
+            
+            for img in images:
+                slide = prs.slides.add_slide(blank_slide_layout)
+                img_path = os.path.join(job_dir, f"slide_{uuid.uuid4().hex}.jpg")
+                img.save(img_path, "JPEG")
+                # تغطية الشريحة بالكامل بالصورة
+                slide.shapes.add_picture(img_path, 0, 0, width=prs.slide_width, height=prs.slide_height)
+            
+            output_path = os.path.join(job_dir, "output.pptx")
+            prs.save(output_path)
         
         elif original_ext in LIBREOFFICE_CONVERSIONS and target_format in LIBREOFFICE_CONVERSIONS[original_ext]:
             output_path = run_libreoffice(input_path, target_format, job_dir)
