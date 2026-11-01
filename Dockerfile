@@ -1,26 +1,30 @@
-# استخدام صورة Python رسمية خفيفة
+# 1. تحميل بيئة بايثون
 FROM python:3.11-slim
 
-# تثبيت LibreOffice والخطوط الأساسية
+# 2. تثبيت برنامج LibreOffice + خطوط عربية وكوردية
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libreoffice-writer \
     libreoffice-impress \
     libreoffice-calc \
     fonts-liberation \
+    fonts-noto \
+    fonts-noto-core \
+    fonts-noto-extra \
+    fonts-kacst \
+    fonts-hosny-amiri \
+    fonts-sil-scheherazade \
     && rm -rf /var/lib/apt/lists/*
 
-# تعيين مجلد العمل
+# 3. إنشاء مجلد العمل
 WORKDIR /app
 
-# نسخ ملفات المتطلبات وتثبيتها أولاً (لاستغلال التخزين المؤقت)
+# 4. نسخ ملف المتطلبات وتثبيت مكتبات بايثون
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# نسخ باقي ملفات المشروع
+# 5. نسخ باقي ملفات المشروع
 COPY . .
 
-# تعريض المنفذ الذي سيستمع عليه Render
+# 6. فتح المنفذ وتشغيل السيرفر
 EXPOSE 10000
-
-# تشغيل السيرفر باستخدام Gunicorn (مثالي لـ Render)
 CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--workers", "1", "--threads", "4", "--timeout", "180", "app:app"]
