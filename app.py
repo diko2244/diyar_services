@@ -142,8 +142,8 @@ def submit_order():
         details = data.get('details', 'غير محدد')
 
         # ⚠️ ضع التوكن ورقم الشات الخاص بك هنا
-        BOT_TOKEN = 'ضع_التوكن_هنا'
-        CHAT_ID = 'ضع_رقم_الشات_هنا'
+        BOT_TOKEN = '9247364962:AAEeM0xoYlXb5kDTGNnQ7qyKq_FTUXEriV4'
+        CHAT_ID = '1637312694'
 
         message = f"🔔 *طلب خدمة جديد*\n\n📌 *الخدمة:* {service_type}\n👤 *الاسم:* {name}\n📞 *التواصل:* {contact}\n📝 *التفاصيل:* {details}"
 
