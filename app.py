@@ -128,7 +128,41 @@ def convert():
             time.sleep(5)
             shutil.rmtree(job_dir, ignore_errors=True)
         threading.Thread(target=cleanup, daemon=True).start()
+import requests # تأكد من وجود هذا الاستيراد في أعلى الملف
 
+# ... الكود السابق الخاص بالتحويل ...
+
+@app.route('/submit-order', methods=['POST'])
+def submit_order():
+    try:
+        data = request.json
+        service_type = data.get('serviceType', 'غير محدد')
+        contact = data.get('contact', 'غير محدد')
+        name = data.get('name', 'غير محدد')
+        details = data.get('details', 'غير محدد')
+
+        # ⚠️ ضع التوكن ورقم الشات الخاص بك هنا
+        BOT_TOKEN = 'ضع_التوكن_هنا'
+        CHAT_ID = 'ضع_رقم_الشات_هنا'
+
+        message = f"🔔 *طلب خدمة جديد*\n\n📌 *الخدمة:* {service_type}\n👤 *الاسم:* {name}\n📞 *التواصل:* {contact}\n📝 *التفاصيل:* {details}"
+
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": message,
+            "parse_mode": "Markdown"
+        }
+
+        response = requests.post(url, json=payload)
+        
+        if response.status_code == 200:
+            return jsonify({"status": "success", "message": "تم إرسال الطلب بنجاح"}), 200
+        else:
+            return jsonify({"status": "error", "message": "فشل إرسال الإشعار"}), 500
+
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
