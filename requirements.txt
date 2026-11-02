@@ -5,3 +5,4 @@ python-docx
 gunicorn
 pdf2image
 python-pptx
+requests
