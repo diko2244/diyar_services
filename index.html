@@ -1359,31 +1359,57 @@
             document.getElementById('request').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function submitServiceForm(e) {
-            e.preventDefault();
+// إرسال الطلب إلى السيرفر
+async function submitServiceForm(e) {
+    e.preventDefault();
 
-            const serviceType = sanitizeInput(document.getElementById('reqServiceType').value);
-            const contact = sanitizeInput(document.getElementById('reqContact').value);
-            const name = sanitizeInput(document.getElementById('reqName').value) || 'غير محدد';
-            const details = sanitizeInput(document.getElementById('reqDetails').value);
+    const serviceType = sanitizeInput(document.getElementById('reqServiceType').value);
+    const contact = sanitizeInput(document.getElementById('reqContact').value);
+    const name = sanitizeInput(document.getElementById('reqName').value) || 'غير محدد';
+    const details = sanitizeInput(document.getElementById('reqDetails').value);
 
-            const newReq = {
-                id: Date.now(),
-                serviceType,
-                contact,
-                name,
-                details,
-                date: new Date().toLocaleString()
-            };
+    const newReq = {
+        id: Date.now(),
+        serviceType,
+        contact,
+        name,
+        details,
+        date: new Date().toLocaleString()
+    };
 
-            const existing = JSON.parse(localStorage.getItem('diyar_requests') || '[]');
-            existing.unshift(newReq);
-            localStorage.setItem('diyar_requests', JSON.stringify(existing));
+    // 1. حفظ محلياً (ليظهر في لوحة الأدمن على جهازك فقط)
+    const existing = JSON.parse(localStorage.getItem('diyar_requests') || '[]');
+    existing.unshift(newReq);
+    localStorage.setItem('diyar_requests', JSON.stringify(existing));
 
-            showToast('تم إرسال طلبك الآلي بنجاح!', 'success');
+    // 2. إرسال الطلب إلى سيرفر Render الخاص بك
+    try {
+        showToast('جاري إرسال الطلب إلى السيرفر...', 'info');
+        
+        const response = await fetch('https://diyar-services.onrender.com/submit-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                serviceType: serviceType,
+                contact: contact,
+                name: name,
+                details: details
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            showToast('تم إرسال طلبك بنجاح! سيصلك إشعار قريباً.', 'success');
             e.target.reset();
+        } else {
+            showToast('فشل السيرفر: ' + result.message, 'error');
         }
-
+    } catch (err) {
+        console.error(err);
+        showToast('حدث خطأ في الاتصال بالسيرفر.', 'error');
+    }
+}
         // ----------------------------------------------------------------
         // 5. HIDDEN ADMIN ACCESS & BRUTE-FORCE LOCKOUT
         // ----------------------------------------------------------------
