@@ -2,6 +2,9 @@ import os
 import subprocess
 import shutil
 import uuid
+import time
+import threading
+import requests
 from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
@@ -9,20 +12,22 @@ from werkzeug.utils import secure_filename
 # استيراد مكتبات التحويل
 try:
     from pdf2docx import Converter
-    HAS_PDF2DOCX = True
+    import fitz  # PyMuPDF (يأتي مدمجاً مع pdf2docx)
+    HAS_PDF_TOOLS = True
 except ImportError:
-    HAS_PDF2DOCX = False
+    HAS_PDF_TOOLS = False
 
 try:
-    from pdf2image import convert_from_path
     from pptx import Presentation
     from pptx.util import Inches
-    HAS_PDF2PPT = True
+    HAS_PPTX = True
 except ImportError:
-    HAS_PDF2PPT = False
+    HAS_PPTX = False
 
 app = Flask(__name__)
-CORS(app)
+
+# ✅ إصلاح CORS: السماح لموقعك بالاتصال بالسيرفر
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # استخدام مجلد مؤقت داخل الحاوية
 TEMP_DIR = "/tmp/converter"
@@ -86,32 +91,51 @@ def convert():
     file.save(input_path)
     
     try:
+        # 1. تحويل PDF إلى Word
         if original_ext == 'pdf' and target_format == 'docx':
-            if not HAS_PDF2DOCX:
+            if not HAS_PDF_TOOLS:
                 return jsonify({"error": "pdf2docx غير متاح"}), 500
             output_path = os.path.join(job_dir, "output.docx")
-            cv = Converter(input_path); cv.convert(output_path); cv.close()
+            cv = Converter(input_path)
+            cv.convert(output_path)
+            cv.close()
         
-        # التعديل الجديد: تحويل PDF إلى PowerPoint كصور
+        # 2. تحويل PDF إلى PowerPoint (تم التعديل ليستخدم PyMuPDF بدلاً من pdf2image)
         elif original_ext == 'pdf' and target_format == 'pptx':
-            if not HAS_PDF2PPT:
-                return jsonify({"error": "مكتبات pdf2image أو python-pptx غير متاحة"}), 500
+            if not HAS_PDF_TOOLS or not HAS_PPTX:
+                return jsonify({"error": "المكتبات المطلوبة غير متاحة"}), 500
             
-            # تحويل كل صفحة PDF إلى صورة
-            images = convert_from_path(input_path)
+            doc = fitz.open(input_path)
+            if len(doc) == 0:
+                doc.close()
+                return jsonify({"error": "ملف PDF فارغ"}), 400
+                
             prs = Presentation()
             blank_slide_layout = prs.slide_layouts[6]
             
-            for img in images:
+            # ضبط أبعاد الشريحة لتطابق أبعاد PDF
+            first_rect = doc[0].rect
+            prs.slide_width = int(first_rect.width * 12700)
+            prs.slide_height = int(first_rect.height * 12700)
+
+            for page_num in range(len(doc)):
+                page = doc[page_num]
+                # تحويل الصفحة إلى صورة بدقة مناسبة
+                pix = page.get_pixmap(dpi=150)
+                img_path = os.path.join(job_dir, f"page_{page_num}.png")
+                pix.save(img_path)
+                
                 slide = prs.slides.add_slide(blank_slide_layout)
-                img_path = os.path.join(job_dir, f"slide_{uuid.uuid4().hex}.jpg")
-                img.save(img_path, "JPEG")
-                # تغطية الشريحة بالكامل بالصورة
                 slide.shapes.add_picture(img_path, 0, 0, width=prs.slide_width, height=prs.slide_height)
+                
+                # حذف الصورة المؤقتة لتوفير المساحة
+                os.remove(img_path)
             
             output_path = os.path.join(job_dir, "output.pptx")
             prs.save(output_path)
+            doc.close()
         
+        # 3. التحويلات عبر LibreOffice
         elif original_ext in LIBREOFFICE_CONVERSIONS and target_format in LIBREOFFICE_CONVERSIONS[original_ext]:
             output_path = run_libreoffice(input_path, target_format, job_dir)
         else:
@@ -120,17 +144,18 @@ def convert():
         if output_path and os.path.exists(output_path):
             return send_file(output_path, as_attachment=True, download_name=f"converted.{target_format}")
         return jsonify({"error": "فشل إنشاء الملف"}), 500
+        
     except Exception as e:
+        print(f"Conversion Error: {str(e)}") # يطبع الخطأ في سجلات Render
         return jsonify({"error": str(e)}), 500
     finally:
-        import threading, time
+        # تنظيف المجلد بعد إرسال الملف
         def cleanup():
             time.sleep(5)
             shutil.rmtree(job_dir, ignore_errors=True)
         threading.Thread(target=cleanup, daemon=True).start()
-import requests # تأكد من وجود هذا الاستيراد في أعلى الملف
 
-# ... الكود السابق الخاص بالتحويل ...
+# ---------------- قسم إرسال الطلبات إلى تيليجرام ----------------
 
 @app.route('/submit-order', methods=['POST'])
 def submit_order():
@@ -141,7 +166,6 @@ def submit_order():
         name = data.get('name', 'غير محدد')
         details = data.get('details', 'غير محدد')
 
-        # ⚠️ ضع التوكن ورقم الشات الخاص بك هنا
         BOT_TOKEN = '9247364962:AAEeM0xoYlXb5kDTGNnQ7qyKq_FTUXEriV4'
         CHAT_ID = '1637312694'
 
@@ -163,6 +187,7 @@ def submit_order():
 
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
