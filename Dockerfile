@@ -1,12 +1,13 @@
-# استخدام صورة أوبنتو الرسمية
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-# تثبيت LibreOffice والخطوط العربية والأدوات المطلوبة
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
+    python3-venv \
     libreoffice \
     libreoffice-writer \
     libreoffice-impress \
@@ -18,10 +19,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     poppler-utils \
     && rm -rf /var/lib/apt/lists/*
 
+# بيئة افتراضية: تحل PEP 668 وتضمن أن pip و gunicorn من نفس البيئة
+RUN python3 -m venv "$VIRTUAL_ENV"
+
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
